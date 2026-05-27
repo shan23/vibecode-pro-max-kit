@@ -24,32 +24,34 @@ living project knowledge, and autonomous agent orchestration.
 
 ## Install
 
-### New project (cleanest path)
+### Any project (new or existing)
 
 ```bash
-npx degit withkynam/vibecode-pro-max-kit my-project
-cd my-project && git init && claude
+curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
 
-Then tell Claude: **"Run vc-setup"**. It auto-detects your project, scaffolds directories, studies your codebase, and populates context. Done.
-
-### Existing project (safe merge)
-
-Open Claude Code in your project and say:
+Then open Claude Code and say:
 
 ```
-Run vc-setup to install the vibecode harness
+Run vc-setup
 ```
 
-That's it. vc-setup handles everything:
-- Clones the kit to a temp directory
-- **Merges safely** — preserves your existing `.claude/settings.json`, hooks, and configs
-- Backs up your `CLAUDE.md` if you have one (as `CLAUDE.md.pre-vibecode`)
-- Installs agents, skills, hooks, protocols, and seed templates
-- Runs the full DETECT → SCAFFOLD → STUDY → VALIDATE pipeline
-- Studies your codebase and populates `process/context/all-context.md` with real content
+**That's it.** vc-setup handles everything automatically:
 
-Your existing files are never destroyed. The skill knows the difference between "missing" (install) and "exists" (preserve or merge).
+- **Fresh project?** Installs the full harness, then studies your codebase
+- **Existing `.claude/` config?** Merges safely — your settings, hooks, and custom configs are preserved
+- **Existing `CLAUDE.md`?** Backed up as `CLAUDE.md.pre-vibecode`, harness version installed
+
+After install, vc-setup runs 4 phases:
+
+```
+DETECT    → reads your package.json, detects stack, monorepo, test setup
+SCAFFOLD  → creates process/ directory from seed templates
+STUDY     → deep-scans your codebase, auto-populates context with REAL content
+VALIDATE  → verifies everything is wired correctly
+```
+
+You end up with `process/context/all-context.md` fully populated with your architecture, patterns, test commands, and conventions. Every agent reads this on every task — zero manual setup.
 
 ### Already installed? Update anytime
 
