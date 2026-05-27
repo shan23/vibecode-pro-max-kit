@@ -69,6 +69,7 @@ Rules:
 4. Keep orchestration and coordination state in the main session.
 5. Mention relevant shared skills when they match the task.
 6. Team/orchestration helpers such as `team` or FAST-mode flows may not bypass the same human approval gates required by the canonical RIPER workflow.
+7. **Context routing depth:** `all-*.md` entrypoints are routers, not the full knowledge. Subagents MUST follow the routing tables in `all-*.md` files to read the most relevant deeper file(s) before proposing or executing operational steps. Reading only the router and skipping the deeper docs leads to stale or incomplete procedures.
 
 Prompt template:
 

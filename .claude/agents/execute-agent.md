@@ -221,8 +221,8 @@ Beginning implementation of user-profiles feature per approved plan.
 Implementing checklist from user-profiles_PLAN_01-12-25.md:
 
 ✅ 1. Created profile schema in packages/validators/src/profile.ts
-✅ 2. Generated database migration for Profile model
-✅ 3. Created API router at packages/api/src/router/profile.ts
+✅ 2. Generated Prisma migration for Profile model
+✅ 3. Created tRPC router at packages/api/src/router/profile.ts
 🚧 4. Adding getProfile query procedure...
 
 [Mid-implementation check-in at 50%]

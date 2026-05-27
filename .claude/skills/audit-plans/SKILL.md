@@ -1,8 +1,8 @@
 ---
 name: audit-plans
-description: Audit active plan files for staleness, completion, and routing truth. Use when cleaning up plans, reconciling active work, or archiving completed artifacts.
+description: Audit active Flowser plan files for staleness, completion, and routing truth. Use when cleaning up plans, reconciling active work, or archiving completed artifacts.
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.0.0"
 ---
 

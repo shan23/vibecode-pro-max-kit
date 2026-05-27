@@ -1,8 +1,8 @@
 ---
 name: generate-context
-description: Generate or update the project's authoritative repository context at process/context/all-context.md. Use when repo context is missing, stale, or contradicted by code.
+description: Generate or update Flowser's authoritative repository context at process/context/all-context.md. Use when repo context is missing, stale, or contradicted by code.
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.0.0"
 ---
 
@@ -38,5 +38,5 @@ Optional input: a package, app, feature, context group, or architectural area to
 - Do not store agent-specific mechanics here unless they affect project workflow.
 - Do not rewrite grouped context docs; if they are stale or mis-grouped, flag `audit-context`.
 - Prefer concise, factual, path-specific documentation.
-- Use the project's package manager terminology for package management.
+- Use `pnpm` terminology for package management.
 - Treat validation failures as blockers before presenting context as refreshed.

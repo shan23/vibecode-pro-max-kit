@@ -1,14 +1,14 @@
 ---
 name: generate-plan
-description: Create or update implementation plans in the repo's SIMPLE or COMPLEX format. Use when turning an idea, PRD, or approved direction into a saved plan artifact.
+description: Create or update Flowser implementation plans in the repo's SIMPLE or COMPLEX format. Use when turning an idea, PRD, or approved direction into a saved plan artifact.
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.0.0"
 ---
 
 # Generate Plan
 
-Use this skill to produce the authoritative implementation plan artifact set.
+Use this skill to produce the authoritative implementation plan artifact set for Flowser work.
 
 This skill is the canonical planning contract for the repo. Planning discipline previously spread across `ck:plan` now belongs here plus the `plan-agent` prompt.
 

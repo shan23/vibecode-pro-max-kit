@@ -4,7 +4,7 @@ description: "Use when you need to compare a local or remote repository, extract
 license: MIT
 argument-hint: "<github-url|owner/repo|local-path> [feature-description] [--compare|--adapt] [--feature <name>] [--report]"
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.1.0"
 ---
 
@@ -16,12 +16,12 @@ This is a helper skill only.
 
 - Do use it for repo-to-repo feature study, comparison, source manifests, dependency mapping, challenge-first trade-off review, and adaptation prep.
 - Do use it when the user wants to borrow behavior, structure, UX flow, or implementation ideas from another repo and needs a grounded comparison before deciding what to do.
-- Do not use it to write code, create plans automatically, or bypass planning and execute approval.
+- Do not use it to write code, create plans automatically, or bypass Flowser planning and execute approval.
 - Do not use upstream shortcut modes or retired upstream planning/execution command semantics here.
 
 ## Approved Modes
 
-Only two narrowed modes survive:
+Only two narrowed modes survive in Flowser:
 
 - `--compare`
   - side-by-side analysis only
@@ -135,7 +135,7 @@ Every non-trivial `xia` study should produce:
 5. challenge questions
 6. decision matrix
 7. risk summary
-8. recommendation and safe handoff
+8. recommendation and Flowser-safe handoff
 
 When the source scope is too broad, narrow it before writing conclusions.
 
@@ -149,4 +149,4 @@ When the requested adaptation would introduce new auth, schema, runtime, or work
 - `compare our implementation with theirs`
 - `port this UX pattern into our stack`
 
-Load `references/xia-workflow.md` for the decision tree.
+Load `references/xia-workflow.md` for the Flowser-specific decision tree.

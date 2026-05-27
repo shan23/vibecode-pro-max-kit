@@ -7,9 +7,9 @@ Reference checklist for `ck:security` audits. Use during Step 2 (STRIDE Analysis
 ## STRIDE Checklist
 
 ### Spoofing (Authentication)
-> **Note:** If your project uses externalized auth (e.g., Clerk, Auth0, Supabase Auth), local password hashing (bcrypt/argon2) may not apply. Focus checks on session validation, webhook signature verification, and JWT handling instead.
+> **Note (Flowser project):** This project uses Clerk for externalized auth. Local password hashing (bcrypt/argon2) does not apply — password security is managed by Clerk. Focus checks on Clerk session validation, webhook signature verification, and Clerk-issued JWT handling.
 - [ ] All endpoints require authentication (unless intentionally public)
-- [ ] Passwords hashed with bcrypt/argon2 — not MD5 or SHA1 (N/A for externalized-auth projects)
+- [ ] Passwords hashed with bcrypt/argon2 — not MD5 or SHA1 (N/A for Clerk-auth projects)
 - [ ] JWT tokens have expiration (`exp`) and are validated server-side
 - [ ] Session management uses `Secure`, `HttpOnly`, `SameSite` cookie flags
 - [ ] Multi-factor auth available for sensitive operations

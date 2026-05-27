@@ -2,6 +2,14 @@
 
 # vibecode-pro-max-kit
 
+<a href="https://flowser.ai">
+  <img src="assets/flowser-logo.svg" alt="Flowser" width="120">
+</a>
+
+*Sponsored by [Flowser.ai](https://flowser.ai) — AI Agents with computers for GTM*
+
+<br>
+
 **The complete agent development harness for Claude Code + Codex**
 
 Not just configs — a self-improving development system with phase-locked safety,

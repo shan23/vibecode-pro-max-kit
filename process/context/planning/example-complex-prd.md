@@ -19,8 +19,8 @@ Build a visually impressive, shareable achievements section within the existing 
 - [Execution Brief](#15-execution-brief)
 - [Architecture Decisions](#3-architecture-decisions-final)
 - [Component Details](#8-component-details)
-- [Database Schema](#11-database-schema-orm-style)
-- [API Surface](#12-api-surface)
+- [Database Schema](#11-database-schema-prisma-style)
+- [API Surface](#12-api-surface-trpc)
 - [Phased Delivery Plan](#14-phased-delivery-plan)
 - [RFCs](#16-rfcs)
 - [Implementation Checklist](#implementation-checklist)
@@ -33,7 +33,7 @@ EngageKit users manage multiple LinkedIn accounts and post AI-assisted comments.
 
 **In-scope**:
 - Achievements section integrated into existing account dashboard (`/[orgSlug]/[accountSlug]/page.tsx`)
-- Three grouped API queries (profile metrics, network data, activity data)
+- Three grouped tRPC queries (profile metrics, network data, activity data)
 - Zustand store for achievements state management (consistent with existing `useAccountStore` pattern)
 - Bento box layout with merged hero header + metrics
 - Network treemap visualization (Recharts)
@@ -59,18 +59,18 @@ EngageKit users manage multiple LinkedIn accounts and post AI-assisted comments.
 
 ## 1.5 Execution Brief
 
-### Phase 1-3: Foundation (Database Indexes, API Routers, Zustand Store Setup)
-**What happens:** Add database indexes for performance, create three new API procedures for achievements data, create Zustand store for achievements state following existing `useAccountStore` pattern.
+### Phase 1-3: Foundation (Database Indexes, tRPC Routers, Zustand Store Setup)
+**What happens:** Add database indexes for performance, create three new tRPC procedures for achievements data, create Zustand store for achievements state following existing `useAccountStore` pattern.
 
-**Test:** Indexes visible in ORM schema, API procedures compile and return mock data, Zustand store initializes without errors.
+**Test:** Indexes visible in Prisma schema, tRPC procedures compile and return mock data, Zustand store initializes without errors.
 
 ### Phase 4-5: Component Architecture (Bento Layout + Individual Cards)
 **What happens:** Build AchievementsSection parent component with CSS Grid bento layout, create individual card components (ProfileMetricsCard, NetworkTreemapCard, ActivityHeatMapCard, BestFriendsCard, StreakCard).
 
 **Test:** Layout renders correctly on desktop/tablet/mobile, cards accept props and display skeleton states, no visual regressions.
 
-### Phase 6-7: Data Integration (Connect API + Populate UI)
-**What happens:** Wire Zustand store to API queries, connect all card components to Zustand store selectors, implement loading/error states throughout.
+### Phase 6-7: Data Integration (Connect tRPC + Populate UI)
+**What happens:** Wire Zustand store to tRPC queries, connect all card components to Zustand store selectors, implement loading/error states throughout.
 
 **Test:** Real data populates all cards, loading skeletons appear during fetch, error boundaries catch failures gracefully, Zustand DevTools shows state updates.
 
@@ -136,7 +136,7 @@ User: "Begin RFC-001: Database Indexes"
 
 Assistant (Pre-Phase Research):
 - Reading existing Comment model indexes...
-- Analyzing query patterns in API routers...
+- Analyzing query patterns in tRPC routers...
 - Findings: Current indexes only on [accountId], [status], [commentedAt]
 - Recommended: Add composite indexes for achievements queries
 - Do you approve proceeding with this approach?
@@ -145,7 +145,7 @@ User: "Yes, proceed"
 
 Assistant (Detailed Planning):
 - Will add 3 composite indexes to Comment model
-- Files to modify: packages/db/schema/models/comment.schema
+- Files to modify: packages/db/prisma/models/comment.prisma
 - Migration command: pnpm db:migrate dev
 - Expected migration time: <1 minute
 - Ready to implement?
@@ -186,8 +186,8 @@ Phase RFC-001 complete. Proceed to RFC-002?
 - Third-party analytics integrations
 
 **Constraints**:
-- Must use existing ORM schema (`Comment`, `LinkedInAccount`, `User`)
-- Must follow neobrutalist theme from `@your-org/ui`
+- Must use existing Prisma schema (`Comment`, `LinkedInAccount`, `User`)
+- Must follow neobrutalist theme from `@sassy/ui`
 - Mobile viewport minimum: 375px width
 - Browser support: Last 2 versions of Chrome, Firefox, Safari, Edge
 - Accessibility: WCAG 2.1 AA compliance
@@ -199,7 +199,7 @@ Phase RFC-001 complete. Proceed to RFC-002?
 
 ### AD-001: Hybrid Data Fetching (3 Grouped Queries)
 
-**Decision**: Use three grouped API queries instead of single mega-query or granular per-component queries.
+**Decision**: Use three grouped tRPC queries instead of single mega-query or granular per-component queries.
 
 **Rationale**:
 - **Performance**: 3 parallel queries vs 1 sequential reduces latency vs single blocking query
@@ -298,7 +298,7 @@ export const useAchievementsStore = create<AchievementsStore>((set) => ({
 // In data-fetching component (AccountDashboardPage)
 const setProfileMetrics = useAchievementsStore((s) => s.setProfileMetrics);
 const { data } = useQuery(
-  api.achievements.getProfileMetrics.queryOptions(),
+  trpc.achievements.getProfileMetrics.queryOptions(),
   {
     onSuccess: (data) => setProfileMetrics(data)
   }
@@ -315,9 +315,9 @@ const isLoading = useAchievementsStore((s) => s.isLoading);
 - DevTools available for debugging state changes
 - Account switching handled via `reset()` action in AccountLayout
 
-### AD-003: Server-Side Aggregations in API
+### AD-003: Server-Side Aggregations in tRPC
 
-**Decision**: Perform all metric calculations (verified count, percentile, streaks) in API procedures, not client-side.
+**Decision**: Perform all metric calculations (verified count, percentile, streaks) in tRPC procedures, not client-side.
 
 **Rationale**:
 - Database-level aggregations are faster than client-side processing
@@ -327,7 +327,7 @@ const isLoading = useAchievementsStore((s) => s.isLoading);
 
 **Example**:
 ```typescript
-// Server-side (API procedure)
+// Server-side (tRPC procedure)
 const verifiedCount = await db.comment.count({
   where: { accountId, peakTouchScore: { gte: 80 }, status: 'POSTED' }
 });
@@ -338,7 +338,7 @@ const verified = comments.filter(c => c.peakTouchScore >= 80).length;
 ```
 
 **Implications**:
-- More complex API procedures (business logic on backend)
+- More complex tRPC procedures (business logic on backend)
 - Better performance and scalability
 - Easier to cache at database layer
 
@@ -451,13 +451,13 @@ User navigates to /[orgSlug]/[accountSlug]
           ↓
 AccountDashboardPage component renders
           ↓
-Page fires 3 parallel API queries via useQuery hooks:
-  1. api.achievements.getProfileMetrics.useQuery()
-  2. api.achievements.getNetworkData.useQuery()
-  3. api.achievements.getActivityData.useQuery()
+Page fires 3 parallel tRPC queries via useQuery hooks:
+  1. trpc.achievements.getProfileMetrics.useQuery()
+  2. trpc.achievements.getNetworkData.useQuery()
+  3. trpc.achievements.getActivityData.useQuery()
           ↓
-API procedures execute on server:
-  - Query ORM for Comment data (filtered by accountId, status=POSTED)
+tRPC procedures execute on server:
+  - Query Prisma for Comment data (filtered by accountId, status=POSTED)
   - Aggregate metrics (verified count, assisted count, streaks)
   - Calculate global percentile (compare to all accounts)
   - Group network data by authorProfileUrl (top 50)
@@ -484,28 +484,28 @@ User sees fully populated achievements dashboard
 ## 6. Security Posture
 
 **Authentication**:
-- All API procedures use `accountProcedure` (requires Auth auth + account ownership)
+- All tRPC procedures use `accountProcedure` (requires Clerk auth + account ownership)
 - Validates user has access to requested LinkedIn account
 - Prevents cross-account data leakage
 
 **Data Privacy**:
 - Only shows data for comments posted by current account (filtered by `accountId`)
-- Profile pictures from `owner.imageUrl` (Auth-managed, already public)
+- Profile pictures from `owner.imageUrl` (Clerk-managed, already public)
 - Network data shows LinkedIn profile URLs (already public information)
 - No sensitive metadata exposed (touch scores are internal metrics)
 
 **Rate Limiting**:
-- API procedures inherit Next.js rate limiting (hosting platform default: 100 req/10s per IP)
+- tRPC procedures inherit Next.js rate limiting (Vercel default: 100 req/10s per IP)
 - Client-side caching via React Query (5-minute staleTime)
 - No infinite scroll or polling (data loads once on page visit)
 
 **SQL Injection**:
-- All queries use ORM (parameterized queries, no raw SQL)
-- User input limited to `accountSlug` (validated via ORM relation lookup)
+- All queries use Prisma ORM (parameterized queries, no raw SQL)
+- User input limited to `accountSlug` (validated via Prisma relation lookup)
 
 **XSS Prevention**:
 - React auto-escapes all text content
-- Profile names and URLs from database are sanitized by ORM
+- Profile names and URLs from database are sanitized by Prisma
 - No `dangerouslySetInnerHTML` used anywhere
 
 ---
@@ -574,7 +574,7 @@ const setLoading = useAchievementsStore((s) => s.setLoading);
 const setError = useAchievementsStore((s) => s.setError);
 
 const { data, isLoading, error } = useQuery(
-  api.achievements.getProfileMetrics.queryOptions(),
+  trpc.achievements.getProfileMetrics.queryOptions(),
   {
     onSuccess: (data) => setProfileMetrics(data),
     onError: (err) => setError(err.message)
@@ -637,7 +637,7 @@ useEffect(() => {
 - Display merged hero header (profile pic + accountSlug + title)
 - Show verified count, assisted count, percentile
 - Display current streak and longest streak
-- Use user's profile picture from Auth (`owner.imageUrl`)
+- Use user's profile picture from Clerk (`owner.imageUrl`)
 
 **Data Source**: `useAchievementsStore((s) => s.profileMetrics)`
 
@@ -760,21 +760,21 @@ useEffect(() => {
 
 ## 8. Backend Endpoints and Workers
 
-Not applicable - all data fetched via API (no dedicated backend service).
+Not applicable - all data fetched via tRPC (no dedicated backend service).
 
 ---
 
 ## 9. Infrastructure Deployment
 
-No infrastructure changes required - deploys with existing Next.js app on hosting platform.
+No infrastructure changes required - deploys with existing Next.js app on Vercel.
 
 ---
 
-## 10. Database Schema (ORM-style)
+## 10. Database Schema (Prisma-style)
 
 **Existing Models** (No changes required):
 
-```
+```prisma
 model LinkedInAccount {
   id               String   @id @default(uuid())
   profileSlug      String?  @unique
@@ -785,7 +785,7 @@ model LinkedInAccount {
 }
 
 model User {
-  id                  String   @id  // Auth user ID
+  id                  String   @id  // Clerk user ID
   imageUrl            String?       // Profile picture
   linkedInAccounts    LinkedInAccount[]
   // ... other fields
@@ -820,7 +820,7 @@ enum CommentStatus {
 
 **Suggested Indexes** (Add for performance):
 
-```
+```prisma
 model Comment {
   // ... existing fields
 
@@ -832,7 +832,7 @@ model Comment {
 
 ---
 
-## 11. API Surface (API)
+## 11. API Surface (tRPC)
 
 **New Router**: `packages/api/src/router/achievements.ts`
 
@@ -1153,7 +1153,7 @@ Not applicable - no WebSocket or real-time updates. Data loads on page visit onl
 ### Current Status
 
 ⏳ **Phase 1**: Database Indexes and Schema Validation (PLANNED)
-⏳ **Phase 2**: API Router Setup (PLANNED)
+⏳ **Phase 2**: tRPC Router Setup (PLANNED)
 ⏳ **Phase 3**: Zustand Store Implementation (PLANNED)
 ⏳ **Phase 4**: Bento Layout Component Structure (PLANNED)
 ⏳ **Phase 5**: Profile Metrics Card (PLANNED)
@@ -1229,20 +1229,20 @@ Not applicable - no WebSocket or real-time updates. Data loads on page visit onl
 
 **Stage 1: Schema Analysis**
 1. Review existing indexes in `Comment` model
-2. Identify slow queries via ORM query logs (if available)
+2. Identify slow queries via Prisma query logs (if available)
 3. Determine optimal index combinations for:
    - Verified/assisted counts (`accountId + status + peakTouchScore`)
    - Streak calculations (`accountId + status + commentedAt`)
    - Network grouping (`accountId + status + authorProfileUrl`)
 
 **Stage 2: Index Implementation**
-1. Add indexes to `packages/db/schema/models/comment.schema`:
-   ```
+1. Add indexes to `packages/db/prisma/models/comment.prisma`:
+   ```prisma
    @@index([accountId, status, peakTouchScore])
    @@index([accountId, status, commentedAt])
    @@index([accountId, status, authorProfileUrl])
    ```
-2. Generate ORM migration: `pnpm db:migrate dev`
+2. Generate Prisma migration: `pnpm db:migrate dev`
 3. Review migration SQL for correctness
 4. Test migration on local database
 
@@ -1253,20 +1253,20 @@ Not applicable - no WebSocket or real-time updates. Data loads on page visit onl
 4. Deploy migration to production during low-traffic window
 
 **Acceptance Criteria**:
-- [ ] Three new indexes visible in ORM schema
+- [ ] Three new indexes visible in Prisma schema
 - [ ] Migration successfully applied to local/staging/production
 - [ ] Query execution time reduced by >50% for achievements queries
 - [ ] No database errors or locking issues during migration
 
 **What's Functional Now**: Database optimized for fast achievements data retrieval
 
-**Ready For**: RFC-002 (API Router Implementation)
+**Ready For**: RFC-002 (tRPC Router Implementation)
 
 ---
 
-### RFC-002: API Achievements Router
+### RFC-002: tRPC Achievements Router
 
-**Summary**: Create new API router with three procedures for fetching achievements data.
+**Summary**: Create new tRPC router with three procedures for fetching achievements data.
 
 **Dependencies**: RFC-001 (Database Indexes)
 
@@ -1305,14 +1305,14 @@ Not applicable - no WebSocket or real-time updates. Data loads on page visit onl
 6. Add validation to prevent excessive date ranges (max 730 days)
 
 **Stage 5: Testing & Integration**
-1. Test all procedures via API playground/Postman
+1. Test all procedures via tRPC playground/Postman
 2. Verify accountProcedure authorization works correctly
 3. Test with accounts having 0 comments (empty states)
 4. Test with accounts having 1000+ comments (performance)
-5. Verify type safety end-to-end (API client types generated correctly)
+5. Verify type safety end-to-end (tRPC client types generated correctly)
 
 **Acceptance Criteria**:
-- [ ] Three procedures callable via API client
+- [ ] Three procedures callable via tRPC client
 - [ ] All procedures return correct data for test accounts
 - [ ] Authorization prevents cross-account data access
 - [ ] Query execution time <500ms for accounts with <10k comments
@@ -1320,7 +1320,7 @@ Not applicable - no WebSocket or real-time updates. Data loads on page visit onl
 - [ ] Empty state handling (accounts with 0 comments)
 
 **API Contracts**:
-See [API Surface](#11-api-surface) section above for full contracts.
+See [API Surface](#11-api-surface-trpc) section above for full contracts.
 
 **What's Functional Now**: Backend API ready to serve achievements data
 
@@ -1332,7 +1332,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 **Summary**: Create Zustand store for achievements state management following existing `useAccountStore` pattern.
 
-**Dependencies**: RFC-002 (API Router)
+**Dependencies**: RFC-002 (tRPC Router)
 
 **Stages**:
 
@@ -1455,7 +1455,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 2. Place in grid-area "profile"
 3. Test on different screen sizes (mobile/tablet/desktop)
 4. Verify data flows from Context → Card correctly
-5. Test with real account data (via API)
+5. Test with real account data (via tRPC)
 
 **Stage 4: Styling Refinements**
 1. Adjust spacing between sections (use Tailwind gap utilities)
@@ -1833,7 +1833,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 5. Ensure 100% coverage for helper functions
 
 **Stage 2: Component Tests (React Testing Library)**
-1. Test AchievementsProvider with mock API
+1. Test AchievementsProvider with mock tRPC
 2. Test ProfileMetricsCard with mock data
 3. Test NetworkTreemapCard with mock data
 4. Test ActivityHeatMapCard with mock data
@@ -1843,11 +1843,11 @@ See [API Surface](#11-api-surface) section above for full contracts.
 8. Test empty states (no data)
 
 **Stage 3: Integration Tests**
-1. Test full achievements section with real API calls (against test database)
+1. Test full achievements section with real tRPC calls (against test database)
 2. Test account switching (different accountIds)
 3. Test refetch functionality
 4. Test error recovery (retry after failure)
-5. Test data flow from API → Context → Components
+5. Test data flow from tRPC → Context → Components
 
 **Stage 4: End-to-End Tests (Playwright)**
 1. Test page load and initial render
@@ -1907,10 +1907,10 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 - **Frontend**: React 18, Next.js 15 (App Router), TypeScript
 - **Styling**: Tailwind CSS v4, shadcn/ui (neobrutalist theme)
-- **Data Fetching**: API, React Query
+- **Data Fetching**: tRPC, React Query
 - **Visualization**: Recharts (treemap), custom SVG/div grid (heat map)
-- **Database**: ORM, PostgreSQL
-- **Authentication**: Auth (existing)
+- **Database**: Prisma ORM, PostgreSQL (Supabase)
+- **Authentication**: Clerk (existing)
 
 ### Code Standards
 
@@ -1924,7 +1924,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 ### Architecture Patterns
 
-- **Data Fetching**: API procedures return plain objects (no ORM models directly)
+- **Data Fetching**: tRPC procedures return plain objects (no Prisma models directly)
 - **Context**: Use React Context for cross-component data sharing
 - **Components**: Co-locate related components in `_components/` folder
 - **Styling**: Tailwind utilities first, CSS modules only if absolutely necessary
@@ -1939,9 +1939,9 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 ### Security
 
-- All API procedures require authentication (`accountProcedure`)
+- All tRPC procedures require authentication (`accountProcedure`)
 - Validate account ownership before returning data
-- No raw SQL (use ORM only)
+- No raw SQL (use Prisma only)
 - Sanitize user input (accountSlug validation)
 
 ### Documentation
@@ -1966,7 +1966,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
   - **Resolution**: Use `accountId` as tiebreaker (alphabetical order)
 
 **Ambiguities Resolved**:
-- Profile picture source: Confirmed `User.imageUrl` from Auth
+- Profile picture source: Confirmed `User.imageUrl` from Clerk
 - Mobile heat map: Show last 180 days instead of 365
 - Empty states: Show user-friendly messages, not blank cards
 
@@ -2019,9 +2019,9 @@ See [API Surface](#11-api-surface) section above for full contracts.
 3. Submit PR with screenshots and test results
 4. Code review (2 approvals required)
 5. Merge to main
-6. Deploy to staging (hosting platform preview)
+6. Deploy to staging (Vercel preview)
 7. Run smoke tests on staging
-8. Deploy to production (hosting platform production)
+8. Deploy to production (Vercel production)
 9. Monitor error logs for 24 hours
 
 **Rollback Plan**:
@@ -2032,13 +2032,13 @@ See [API Surface](#11-api-surface) section above for full contracts.
 ### Monitoring
 
 **Metrics to Track**:
-- Query execution time (API procedures)
+- Query execution time (tRPC procedures)
 - Page load time (account dashboard)
-- Error rate (API failures)
+- Error rate (tRPC failures)
 - User engagement (how many users visit achievements section)
 
 **Alerts**:
-- API query timeout (>5s)
+- tRPC query timeout (>5s)
 - Error rate >1%
 - Database CPU usage >80%
 
@@ -2046,7 +2046,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 **Monthly Tasks**:
 - Review query performance (check for slow queries)
-- Update dependencies (Recharts, React Query, ORM)
+- Update dependencies (Recharts, React Query, Prisma)
 - Audit database indexes (ensure still optimal)
 
 **Quarterly Tasks**:
@@ -2120,7 +2120,7 @@ See [API Surface](#11-api-surface) section above for full contracts.
 
 - Consider migrating Context to Zustand if state management becomes complex
 - Optimize percentile calculation (cache globally, regenerate hourly)
-- Extract heat map component to `@your-org/ui` for reusability
+- Extract heat map component to `@sassy/ui` for reusability
 - Add E2E tests for all user flows
 - Implement lazy loading for treemap images
 
@@ -2129,20 +2129,20 @@ See [API Surface](#11-api-surface) section above for full contracts.
 ## Implementation Checklist (Complete Workflow)
 
 **Phase 1: Database Indexes** (30 min)
-- [ ] Add indexes to `Comment` model in ORM schema
+- [ ] Add indexes to `Comment` model in Prisma schema
 - [ ] Generate migration: `pnpm db:migrate dev`
 - [ ] Apply migration to staging database
 - [ ] Verify indexes created: `psql` → `\d+ Comment`
 - [ ] Deploy migration to production
 
-**Phase 2: API Router** (3 hours)
+**Phase 2: tRPC Router** (3 hours)
 - [ ] Create `achievements.ts` router file
 - [ ] Implement `getProfileMetrics` procedure
 - [ ] Implement `getNetworkData` procedure
 - [ ] Implement `getActivityData` procedure
 - [ ] Write streak calculation helper function
 - [ ] Register router in root.ts
-- [ ] Test procedures via API playground
+- [ ] Test procedures via tRPC playground
 - [ ] Write unit tests for streak helper
 
 **Phase 3: Context Provider** (2 hours)

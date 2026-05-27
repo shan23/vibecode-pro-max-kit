@@ -1,9 +1,9 @@
 ---
 name: add-worktree
-description: Create a new git worktree for feature development. Use when the user asks to add a worktree, create a feature worktree, or prepare an isolated branch checkout.
+description: Create a new git worktree for Flowser feature development. Use when the user asks to add a worktree, create a feature worktree, or prepare an isolated branch checkout.
 argument-hint: "[branch-name]"
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.0.0"
 ---
 

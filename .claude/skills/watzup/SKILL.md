@@ -1,16 +1,16 @@
 ---
 name: ck:watzup
-description: "Use when you need a read-only handoff summary of current branch state, local/remote refs, worktrees, active plans, selected-plan hints, and suggested next checks."
+description: "Use when you need a read-only handoff summary of current branch state, local/remote refs, worktrees, active Flowser plans, selected-plan hints, and suggested next checks."
 license: MIT
 argument-hint: "[--json] [--fetch] [--selected-plan <path>] [--cwd <path>]"
 metadata:
-  author: vibecode
+  author: flowser
   version: "1.0.0"
 ---
 
 # Watzup
 
-Summarize the current repo state for handoff and resume work.
+Summarize the current Flowser repo state for handoff and resume work.
 
 This is a helper skill only.
 
@@ -97,4 +97,4 @@ Good trigger phrases:
 - `show branch and worktree status`
 - `what should I look at next`
 
-Load `references/watzup-workflow.md` when you need the decision tree or hint-priority rules.
+Load `references/watzup-workflow.md` when you need the Flowser-specific decision tree or hint-priority rules.

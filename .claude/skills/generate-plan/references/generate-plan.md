@@ -299,8 +299,8 @@ In addition to the normal complex-plan structure:
     - Future Enhancements
 11. Backend Endpoints and Workers
 12. Infrastructure Deployment
-13. Database Schema (ORM-style)
-14. API Surface (REST/GraphQL/RPC)
+13. Database Schema (Prisma-style)
+14. API Surface (tRPC/REST/GraphQL)
 15. Real-time Event Model (if applicable)
 16. Phased Delivery Plan
 

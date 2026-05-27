@@ -1,4 +1,4 @@
-# Tech Graph Scripts
+# Flowser Tech Graph Scripts
 
 These helper scripts make SVG generation, validation, and proof capture more reliable.
 
@@ -93,7 +93,7 @@ The script:
 - validates each generated SVG
 - exports PNGs when `rsvg-convert` is available
 
-## Output Rules
+## Flowser Output Rules
 
 For durable artifacts, prefer:
 

@@ -1,15 +1,15 @@
 # Repomix Scripts
 
-Utility scripts for batch processing repositories with Repomix while preserving path policy.
+Utility scripts for batch processing repositories with Repomix while preserving Flowser path policy.
 
 ## `repomix_batch.py`
 
 Batch process multiple repositories, local or remote, through `pnpm dlx repomix` by default.
 
-### Constraints
+### Flowser-specific constraints
 
 - Default output directory: `process/general-plans/references/`
-- Output directory must resolve inside a `references/` folder
+- Output directory must resolve inside a Flowser `references/` folder
 - Security checks remain enabled unless `--no-security-check` is passed deliberately
 - The wrapper is for reference artifacts only, not plans or implementation ownership
 

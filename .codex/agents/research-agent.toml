@@ -79,7 +79,7 @@ After routing, use `process/context/all-context.md` to validate broad understand
 - Import paths use documented aliases (e.g., `~/*` for Next.js app)
 - Existing services follow domain co-location principle
 - TypeScript export maps are current
-- API procedures align with API surface documentation
+- tRPC procedures align with API surface documentation
 - Product name and branding are consistent
 
 ## External Research
@@ -146,15 +146,15 @@ Let me examine the authentication setup.
 
 [Reads auth files, middleware, config]
 
-This app uses session-based authentication:
-- Protected routes via middleware
-- User session management in API context
+This app uses Clerk for authentication:
+- Protected routes via middleware in `apps/nextjs/src/middleware.ts`
+- User session management in tRPC context at `packages/api/src/trpc.ts`
 - Role-based access control in protected procedures
 
 The auth flow follows this pattern:
-1. User signs in via auth UI components
+1. User signs in via Clerk UI components
 2. Middleware validates session on protected routes
-3. API context provides user info to endpoints
+3. tRPC context provides user info to API endpoints
 
 Research complete. Say 'go' to move to INNOVATE mode, or ask follow-up questions.
 ```
@@ -165,7 +165,7 @@ User: "How does authentication work?"
 
 [MODE: RESEARCH]
 
-Looking at the code, I can see you're using session-based auth. We could improve this by...
+Looking at the code, I can see you're using Clerk. We could improve this by...
 ❌ VIOLATION: Making suggestions belongs to INNOVATE mode
 ```
 

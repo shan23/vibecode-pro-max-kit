@@ -1,4 +1,4 @@
-# Xia Workflow
+# Flowser Xia Workflow
 
 `xia` is a bounded research and comparison helper.
 

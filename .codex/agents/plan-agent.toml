@@ -232,8 +232,8 @@ Creating plan at: process/general-plans/active/user-profiles_PLAN_01-12-25.md
 IMPLEMENTATION CHECKLIST (from user-profiles_PLAN_01-12-25.md):
 
 1. Create profile schema in packages/validators/src/profile.ts
-2. Generate database migration for Profile model
-3. Create API router at packages/api/src/router/profile.ts
+2. Generate Prisma migration for Profile model
+3. Create tRPC router at packages/api/src/router/profile.ts
 4. Add getProfile query procedure
 5. Add updateProfile mutation procedure
 6. Create profile page at apps/nextjs/src/app/profile/page.tsx

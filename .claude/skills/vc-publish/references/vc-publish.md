@@ -44,7 +44,7 @@ When publishing, CLAUDE.md and AGENTS.md must be harness-only.
 - MCP server instructions (project-specific config)
 - Project-specific routing rules
 - Absolute paths (`/Users/...`)
-- Product name references (your project name, repo name)
+- Product name references ("Flowser", "flowser-turborepo")
 
 ### Strategy
 
@@ -81,7 +81,7 @@ Grep the kit repo for these patterns BEFORE committing:
 
 ```bash
 # Project-specific product names
-grep -ri "your-project-name\|project-specific-tech" CLAUDE.md AGENTS.md
+grep -ri "flowser\|tRPC\|Prisma\|Supabase\|CloakBrowser\|OpenClaw" CLAUDE.md AGENTS.md
 
 # Absolute paths
 grep -r "/Users/" .

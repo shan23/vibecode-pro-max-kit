@@ -1,6 +1,16 @@
 # Database Testing
 
-> **Project Note:** Choose the database testing pattern appropriate to your stack. If your project uses an ORM, use its test helpers for isolated test databases. The PostgreSQL, MongoDB, and Testcontainers examples below are generic reference for projects that need real external database instances.
+> **Project Note (Flowser):** The main app database is Prisma over PostgreSQL. API tests usually use the PGlite-backed Prisma helper from `@sassy/db/test`, while container-local skill apps may still use SQLite and Drizzle. Choose the database pattern by layer instead of treating Drizzle/SQLite as the main app database.
+>
+> ```typescript
+> import { closeTestPrismaClient, createTestPrismaClient } from "@sassy/db/test";
+>
+> const db = await createTestPrismaClient();
+> // ...run isolated API assertions...
+> await closeTestPrismaClient(db);
+> ```
+>
+> The PostgreSQL, MongoDB, and Testcontainers examples below are generic reference for projects that need real external database instances.
 
 ## Testcontainers (Real Database Instances)
 

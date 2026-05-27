@@ -162,7 +162,7 @@ User: "How should we implement user profiles?"
 Let me explore some approaches for user profiles.
 
 **Approach 1: Dedicated Profile Service**
-- Description: Create separate API router for profiles
+- Description: Create separate tRPC router for profiles
 - Pros:
   - Clear separation of concerns
   - Easy to extend with profile-specific features
@@ -184,7 +184,7 @@ Let me explore some approaches for user profiles.
 - Trade-offs: Speed vs long-term maintainability
 
 **Approach 3: Server Components Only**
-- Description: Use Next.js server components, no API layer
+- Description: Use Next.js server components, no tRPC
 - Pros:
   - Simpler data flow
   - No client-side data fetching needed

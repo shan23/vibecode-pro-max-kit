@@ -278,6 +278,8 @@ The active system is intentionally split into four layers:
   - `audit-context`
   - `audit-plans`
   - `audit-vc`
+  - `vc-update`
+  - `vc-publish`
 - **Helper skills** improve how agents work but do not own the workflow:
   - `scout`
   - `sequential-thinking`

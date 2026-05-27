@@ -123,7 +123,7 @@ Version bump semantics:
 
 ```bash
 # Must return empty -- any matches indicate leaked content
-grep -ri "your-project-name\|project-specific-tech" CLAUDE.md AGENTS.md
+grep -ri "flowser\|tRPC\|Prisma\|Supabase\|CloakBrowser\|OpenClaw" CLAUDE.md AGENTS.md
 
 # Must return empty -- no absolute paths
 grep -r "/Users/" .
