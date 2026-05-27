@@ -15,7 +15,7 @@
 Stop your agent from jumping straight to implementation. This harness forces a structured workflow — research first, plan second, execute third — with explicit approval at every transition. No more rewriting AI-generated code because it missed the point.
 
 <p>
-  <img src="https://img.shields.io/badge/version-2.0.2-blue" alt="Version">
+  <img src="https://img.shields.io/badge/version-2.0.3-blue" alt="Version">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
   <img src="https://img.shields.io/badge/agents-12-orange" alt="Agents">
   <img src="https://img.shields.io/badge/skills-31-purple" alt="Skills">
