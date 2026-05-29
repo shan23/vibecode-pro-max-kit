@@ -1087,6 +1087,8 @@ process/features/{feature}/
 
 </details>
 
+> 💡 一部のスキル（`vc-xia` など）は [@mrgoonie](https://github.com/mrgoonie) の [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) にインスピレーションを受けています。80以上ではなく、より少なく深いスキルに集中しました。
+
 <br>
 
 ### 🪝 7つのフック
@@ -1157,9 +1159,9 @@ Run vc-update
   <img src="https://contrib.rocks/image?repo=withkynam/vibecode-pro-max-kit" alt="Contributors" />
 </a>
 
----
+<br>
 
-## 🙏 クレジット
+### 🙏 クレジット
 
 このプロジェクトは [@mrgoonie](https://github.com/mrgoonie) の [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) から恩恵を受けました——特に `ck:xia` などのスキルにインスピレーションを受けています。
 

@@ -1087,6 +1087,8 @@ process/features/{feature}/
 
 </details>
 
+> 💡 Một số skill (như `vc-xia`) được lấy cảm hứng từ [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) của [@mrgoonie](https://github.com/mrgoonie). Chúng tôi tập trung vào ít skill hơn nhưng sâu hơn, thay vì 80+.
+
 <br>
 
 ### 🪝 7 Hooks
@@ -1157,9 +1159,9 @@ Chung toi hoan nghenh contributions! Xem [CONTRIBUTING.md](CONTRIBUTING.md) de b
   <img src="https://contrib.rocks/image?repo=withkynam/vibecode-pro-max-kit" alt="Contributors" />
 </a>
 
----
+<br>
 
-## 🙏 Ghi nhận
+### 🙏 Ghi nhận
 
 Dự án này được hưởng lợi từ [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) của [@mrgoonie](https://github.com/mrgoonie) — đặc biệt các skill như `ck:xia` đã truyền cảm hứng cho chúng tôi.
 

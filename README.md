@@ -1087,6 +1087,8 @@ process/features/{feature}/
 
 </details>
 
+> 💡 Some skills (like `vc-xia`) were inspired by [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) by [@mrgoonie](https://github.com/mrgoonie). We focused on fewer, deeper skills instead of 80+.
+
 <br>
 
 ### 🪝 7 Hooks
@@ -1157,9 +1159,9 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
   <img src="https://contrib.rocks/image?repo=withkynam/vibecode-pro-max-kit" alt="Contributors" />
 </a>
 
----
+<br>
 
-## 🙏 Credits
+### 🙏 Credits
 
 This project benefited from [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) by [@mrgoonie](https://github.com/mrgoonie) — particularly skills like `ck:xia` which inspired some of ours.
 

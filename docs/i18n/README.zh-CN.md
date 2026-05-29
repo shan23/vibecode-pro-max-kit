@@ -1087,6 +1087,8 @@ process/features/{feature}/
 
 </details>
 
+> 💡 部分技能（如 `vc-xia`）受 [@mrgoonie](https://github.com/mrgoonie) 的 [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) 启发。我们专注于更少但更深入的技能，而非 80+。
+
 <br>
 
 ### 🪝 7 个 Hooks
@@ -1157,9 +1159,9 @@ Run vc-update
   <img src="https://contrib.rocks/image?repo=withkynam/vibecode-pro-max-kit" alt="Contributors" />
 </a>
 
----
+<br>
 
-## 🙏 致谢
+### 🙏 致谢
 
 本项目受益于 [@mrgoonie](https://github.com/mrgoonie) 的 [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G)——尤其是 `ck:xia` 等技能给了我们启发。
 

@@ -1087,6 +1087,8 @@ process/features/{feature}/
 
 </details>
 
+> 💡 일부 스킬(`vc-xia` 등)은 [@mrgoonie](https://github.com/mrgoonie)의 [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G)에서 영감을 받았습니다. 80개 이상 대신 더 적고 깊은 스킬에 집중했습니다.
+
 <br>
 
 ### 🪝 7개의 Hook
@@ -1157,9 +1159,9 @@ Run vc-update
   <img src="https://contrib.rocks/image?repo=withkynam/vibecode-pro-max-kit" alt="Contributors" />
 </a>
 
----
+<br>
 
-## 🙏 크레딧
+### 🙏 크레딧
 
 이 프로젝트는 [@mrgoonie](https://github.com/mrgoonie)의 [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G)에서 도움을 받았습니다 — 특히 `ck:xia` 같은 스킬에서 영감을 얻었습니다.
 
