@@ -1159,6 +1159,14 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
+## 🙏 Credits
+
+This project benefited from [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) by [@mrgoonie](https://github.com/mrgoonie) — particularly skills like `ck:xia` which inspired some of ours.
+
+The difference: vibecode-pro-max-kit focuses on the spec-driven development framework and self-improving context organization, without bloating you with 80+ skills. Fewer tools, more structure.
+
+---
+
 ## ⭐ Star History
 
 <a href="https://star-history.com/#withkynam/vibecode-pro-max-kit&Date">

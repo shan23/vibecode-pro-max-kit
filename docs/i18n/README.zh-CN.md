@@ -1159,6 +1159,14 @@ Run vc-update
 
 ---
 
+## 🙏 致谢
+
+本项目受益于 [@mrgoonie](https://github.com/mrgoonie) 的 [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G)——尤其是 `ck:xia` 等技能给了我们启发。
+
+区别在于：vibecode-pro-max-kit 专注于规格驱动的开发框架和自我改进的上下文组织，不会用 80+ 个技能让你应接不暇。更少工具，更多结构。
+
+---
+
 ## ⭐ Star 历史
 
 <a href="https://star-history.com/#withkynam/vibecode-pro-max-kit&Date">

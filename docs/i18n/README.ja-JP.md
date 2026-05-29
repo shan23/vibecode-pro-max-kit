@@ -1159,6 +1159,14 @@ Run vc-update
 
 ---
 
+## 🙏 クレジット
+
+このプロジェクトは [@mrgoonie](https://github.com/mrgoonie) の [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) から恩恵を受けました——特に `ck:xia` などのスキルにインスピレーションを受けています。
+
+違いは：vibecode-pro-max-kit はスペック駆動の開発フレームワークと自己改善するコンテキスト組織に焦点を当て、80以上のスキルで肥大化させません。ツールは少なく、構造を重視。
+
+---
+
 ## ⭐ Star History
 
 <a href="https://star-history.com/#withkynam/vibecode-pro-max-kit&Date">

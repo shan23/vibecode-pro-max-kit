@@ -1159,6 +1159,14 @@ Chung toi hoan nghenh contributions! Xem [CONTRIBUTING.md](CONTRIBUTING.md) de b
 
 ---
 
+## 🙏 Ghi nhận
+
+Dự án này được hưởng lợi từ [ClaudeKit](https://claudekit.cc/?ref=OEOM7R7G) của [@mrgoonie](https://github.com/mrgoonie) — đặc biệt các skill như `ck:xia` đã truyền cảm hứng cho chúng tôi.
+
+Điểm khác biệt: vibecode-pro-max-kit tập trung vào framework phát triển theo spec và tổ chức context tự cải tiến, không phình to với 80+ skill. Ít công cụ hơn, nhiều cấu trúc hơn.
+
+---
+
 ## ⭐ Star History
 
 <a href="https://star-history.com/#withkynam/vibecode-pro-max-kit&Date">
