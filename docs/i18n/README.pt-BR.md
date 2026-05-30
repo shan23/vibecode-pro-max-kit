@@ -89,6 +89,10 @@
 
 ## 🚀 Instalacao (30 segundos)
 
+> **Execute isto dentro da pasta do seu projeto.** Abra um terminal e use `cd` para entrar no projeto onde você quer instalar o harness antes de rodar o comando — ele instala no diretório atual.
+>
+> Prefere conduzir tudo pelo seu agente? Abra o Claude Code ou o Codex com a pasta desse projeto como diretório de trabalho e, em seguida, cole o prompt de configuração completo abaixo.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
@@ -141,6 +145,8 @@ your-project/
 
 <details>
 <summary><strong>🤖 Prompt completo de setup do agente</strong> (copie e cole no Claude Code para maximo controle)</summary>
+
+> **Primeiro, abra o Claude Code ou o Codex com a pasta do seu projeto como diretório de trabalho** (inicie-o de dentro do projeto, ou use `cd` para ir até lá antes). O harness instala no diretório atual, então este precisa ser o seu projeto — depois cole o prompt abaixo.
 
 ```
 First, install the vibecode-pro-max-kit agent harness by running this command:

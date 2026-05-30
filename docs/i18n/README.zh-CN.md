@@ -89,6 +89,10 @@
 
 ## 🚀 安装（30 秒搞定）
 
+> **请在你的项目文件夹内运行此命令。** 打开终端，先 `cd` 进入你想安装本框架的项目，再运行命令——它会安装到当前目录。
+>
+> 更喜欢让你的代理来执行？以该项目文件夹作为工作目录打开 Claude Code 或 Codex，然后粘贴下面的完整设置提示词。
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
@@ -141,6 +145,8 @@ your-project/
 
 <details>
 <summary><strong>🤖 完整的 agent setup 提示词</strong>（复制粘贴到 Claude Code 里可以获得最大控制力）</summary>
+
+> **首先，以你的项目文件夹作为工作目录打开 Claude Code 或 Codex**（从项目内部启动它，或先 `cd` 进去）。本框架会安装到当前目录，所以这里必须是你的项目——然后粘贴下面的提示词。
 
 ```
 First, install the vibecode-pro-max-kit agent harness by running this command:

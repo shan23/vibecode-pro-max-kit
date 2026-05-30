@@ -80,42 +80,46 @@
     <img alt="Tech Stack Row 3" src="https://skillicons.dev/icons?i=supabase,firebase,postgres,mongodb,redis,docker,kubernetes,aws,gcp,azure,vercel,cloudflare,tailwind,electron&perline=15" />
   </picture>
   <br>
-  <sub>React · Next.js · Vue · Nuxt · Svelte · Angular · React Native · Electron · Node.js · Express · Bun · Hono · Python · Django · FastAPI · Flask · Ruby · Rails · Go · Rust · Java · Spring Boot · Kotlin · Swift · PHP · Laravel · C# · .NET · Elixir · TypeScript · Prisma · Supabase · Firebase · PostgreSQL · MongoDB · Redis · GraphQL · Docker · Kubernetes · Terraform · AWS · GCP · Azure · Vercel · Cloudflare · Tailwind · shadcn/ui · va bat ky stack nao project cua ban dang dung</sub>
+  <sub>React · Next.js · Vue · Nuxt · Svelte · Angular · React Native · Electron · Node.js · Express · Bun · Hono · Python · Django · FastAPI · Flask · Ruby · Rails · Go · Rust · Java · Spring Boot · Kotlin · Swift · PHP · Laravel · C# · .NET · Elixir · TypeScript · Prisma · Supabase · Firebase · PostgreSQL · MongoDB · Redis · GraphQL · Docker · Kubernetes · Terraform · AWS · GCP · Azure · Vercel · Cloudflare · Tailwind · shadcn/ui · và bất kỳ stack nào project của bạn đang dùng</sub>
 </p>
 
 </div>
 
 ---
 
-## 🚀 Cai dat (30 giay)
+## 🚀 Cài đặt (30 giây)
+
+> **Chạy lệnh này bên trong thư mục project của bạn.** Mở terminal và `cd` vào project mà bạn muốn cài harness vào trước khi chạy lệnh — nó sẽ cài vào thư mục hiện tại.
+>
+> Thích điều khiển nó bằng agent hơn? Mở Claude Code hoặc Codex với thư mục project đó làm working directory, rồi dán toàn bộ prompt setup đầy đủ bên dưới.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
 
-Sau do mo Claude Code va go:
+Sau đó mở Claude Code và gõ:
 
 ```
 Run vc-setup
 ```
 
-Vay thoi. Skill setup se detect stack cua ban, hoi han ve project (mot cuoc tro chuyen thuc su, khong phai checklist), scaffold thu muc process, deep-scan codebase, va populate cac context files voi noi dung that — khong phai placeholders.
+Vậy thôi. Skill setup sẽ detect stack của bạn, hỏi han về project (một cuộc trò chuyện thực sự, không phải checklist), scaffold thư mục process, deep-scan codebase, và populate các context files với nội dung thật — không phải placeholders.
 
 <br>
 
 <details>
-<summary><strong>📦 Cai xong duoc gi</strong></summary>
+<summary><strong>📦 Cài xong được gì</strong></summary>
 
 <br>
 
 ```
 your-project/
 ├── .claude/
-│   ├── agents/              # 🤖 12 agent definitions chuyen biet
+│   ├── agents/              # 🤖 12 agent definitions chuyên biệt
 │   │   ├── vc-research-agent.md
 │   │   ├── vc-execute-agent.md
 │   │   └── ...
-│   ├── skills/              # ⚡ 31 skills tu dong discover
+│   ├── skills/              # ⚡ 31 skills tự động discover
 │   │   ├── vc-generate-plan/
 │   │   ├── vc-security/
 │   │   ├── vc-scout/
@@ -128,19 +132,21 @@ your-project/
 │   └── agents/              # 🔄 Agents mirror cho Codex
 ├── CLAUDE.md                # 📋 Orchestrator + routing rules
 ├── AGENTS.md                # 📖 Agent registry
-└── process/                 # 🧠 Duoc tao boi vc-setup (khong phai install)
+└── process/                 # 🧠 Được tạo bởi vc-setup (không phải install)
     └── ...
 ```
 
-- **Project moi?** Cai full harness, sau do `vc-setup` nghien cuu codebase cua ban
-- **Da co `.claude/` config?** Backup vao `.vibecode-backup/`, cai moi, khoi phuc `settings.json` cua ban
-- **Da co thu muc `process/`?** Khong bao gio bi dung boi install — `vc-setup` handle migration thong minh
-- **Da co `CLAUDE.md`?** Backup thanh `CLAUDE.md.pre-vibecode`, cai version harness moi
+- **Project mới?** Cài full harness, sau đó `vc-setup` nghiên cứu codebase của bạn
+- **Đã có `.claude/` config?** Backup vào `.vibecode-backup/`, cài mới, khôi phục `settings.json` của bạn
+- **Đã có thư mục `process/`?** Không bao giờ bị đụng bởi install — `vc-setup` handle migration thông minh
+- **Đã có `CLAUDE.md`?** Backup thành `CLAUDE.md.pre-vibecode`, cài version harness mới
 
 </details>
 
 <details>
-<summary><strong>🤖 Prompt setup day du cho agent</strong> (copy-paste vao Claude Code de kiem soat toi da)</summary>
+<summary><strong>🤖 Prompt setup đầy đủ cho agent</strong> (copy-paste vào Claude Code để kiểm soát tối đa)</summary>
+
+> **Trước tiên, mở Claude Code hoặc Codex với thư mục project của bạn làm working directory** (khởi chạy nó từ bên trong project, hoặc `cd` vào đó trước). Harness cài vào thư mục hiện tại, nên đây phải là project của bạn — rồi dán prompt bên dưới.
 
 ```
 First, install the vibecode-pro-max-kit agent harness by running this command:
@@ -192,19 +198,19 @@ Important rules:
 <br>
 
 <details>
-<summary>Muc luc</summary>
+<summary>Mục lục</summary>
 
-- [Van de](#-van-de)
-- [Giai phap](#️-giai-phap)
-- [Cuoc cach mang Vibe Coding](#cuoc-cach-mang-vibe-coding)
-- [Danh cho ai?](#danh-cho-ai)
-- [Tong quan nhanh](#tong-quan-nhanh)
-- [Tai sao cac team dung cai nay](#-tai-sao-cac-team-dung-cai-nay)
-- [So sanh](#so-sanh)
-- [Diem khac biet](#-diem-khac-biet)
-- [Ben trong co gi](#-ben-trong-co-gi)
-- [Cach hoat dong](#-cach-hoat-dong)
-- [He thong an toan tich hop](#️-he-thong-an-toan-tich-hop)
+- [Vấn đề](#-vấn-đề)
+- [Giải pháp](#️-giải-pháp)
+- [Cuộc cách mạng Vibe Coding](#cuộc-cách-mạng-vibe-coding)
+- [Dành cho ai?](#dành-cho-ai)
+- [Tổng quan nhanh](#tổng-quan-nhanh)
+- [Tại sao các team dùng cái này](#-tại-sao-các-team-dùng-cái-này)
+- [So sánh](#so-sánh)
+- [Điểm khác biệt](#-điểm-khác-biệt)
+- [Bên trong có gì](#-bên-trong-có-gì)
+- [Cách hoạt động](#-cách-hoạt-động)
+- [Hệ thống an toàn tích hợp](#️-hệ-thống-an-toàn-tích-hợp)
 - [Contributing](#contributing)
 - [Star History](#-star-history)
 
@@ -212,55 +218,55 @@ Important rules:
 
 ---
 
-## 🔥 Van de
+## 🔥 Vấn đề
 
-Ban bao Claude "them webhook support." No lap tuc bat dau viet code. Khong hoi gi ve architecture. Khong check cac pattern da co. Khong plan. Ban nhan duoc 400 dong code khong khop voi codebase, va mat ca tieng de fix.
+Bạn bảo Claude "thêm webhook support." Nó lập tức bắt đầu viết code. Không hỏi gì về architecture. Không check các pattern đã có. Không plan. Bạn nhận được 400 dòng code không khớp với codebase, và mất cả tiếng để fix.
 
-**Nhung do chi la be noi.** Nhung van de sau hon moi dau that:
+**Nhưng đó chỉ là bề nổi.** Những vấn đề sâu hơn mới đau thật:
 
 <table>
 <tr>
 <td width="50%" valign="top">
 <h1>🧠</h1>
-<strong>Context chet moi session</strong><br><br>
-Agent quen sach moi thu no da hoc. Cung mot loi, cung mot cau hoi, lap di lap lai. Khong memory, khong tich luy knowledge.
+<strong>Context chết mỗi session</strong><br><br>
+Agent quên sạch mọi thứ nó đã học. Cùng một lỗi, cùng một câu hỏi, lặp đi lặp lại. Không memory, không tích lũy knowledge.
 </td>
 <td width="50%" valign="top">
 <h1>📄</h1>
-<strong>Docs cu ngay lap tuc</strong><br><br>
-Ban viet context docs xin tuan truoc. Gio da outdated roi. Khong co gi tu dong cap nhat chung khi codebase thay doi.
+<strong>Docs cũ ngay lập tức</strong><br><br>
+Bạn viết context docs xịn tuần trước. Giờ đã outdated rồi. Không có gì tự động cập nhật chúng khi codebase thay đổi.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>💥</h1>
-<strong>Task lon sup do giua chung</strong><br><br>
-Context window day, state bi mat, agent bat dau hallucinate. Ban phai restart lai tu dau o gio thu 3.
+<strong>Task lớn sụp đổ giữa chừng</strong><br><br>
+Context window đầy, state bị mất, agent bắt đầu hallucinate. Bạn phải restart lại từ đầu ở giờ thứ 3.
 </td>
 <td width="50%" valign="top">
 <h1>🤝</h1>
-<strong>Khong spec, khong review, khong collaboration</strong><br><br>
-PM cua ban khong the review cai agent sap build. Khong co artifact nao de chia se, thao luan, hay approve truoc khi code duoc viet.
+<strong>Không spec, không review, không collaboration</strong><br><br>
+PM của bạn không thể review cái agent sắp build. Không có artifact nào để chia sẻ, thảo luận, hay approve trước khi code được viết.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🎭</h1>
-<strong>Quyet dinh architecture bi hallucinate</strong><br><br>
-Agent tu bia pattern thay vi research xem cac codebase khac giai quyet van de tuong tu nhu nao.
+<strong>Quyết định architecture bị hallucinate</strong><br><br>
+Agent tự bịa pattern thay vì research xem các codebase khác giải quyết vấn đề tương tự như nào.
 </td>
 </tr>
 </table>
 
-**Agent cua ban co intelligence nhung khong co process, khong co memory, va khong co cach nao collaborate voi team.**
+**Agent của bạn có intelligence nhưng không có process, không có memory, và không có cách nào collaborate với team.**
 
-Du ban la developer, PM, hay CEO moi bat dau vibe coding — van de nay anh huong nhu nhau. Cach giai quyet cung giong nhau: **cho agent cua ban mot development process that su.**
+Dù bạn là developer, PM, hay CEO mới bắt đầu vibe coding — vấn đề này ảnh hưởng như nhau. Cách giải quyết cũng giống nhau: **cho agent của bạn một development process thật sự.**
 
 ---
 
-## 🛠️ Giai phap
+## 🛠️ Giải pháp
 
-Bo harness nay cai dat mot he thong development hoan chinh vao project cua ban — khong chi mot file CLAUDE.md, ma la **12 agents chuyen biet, 31 skills**, va mot workflow phase-locked buoc agent phai **hieu truoc khi build**.
+Bộ harness này cài đặt một hệ thống development hoàn chỉnh vào project của bạn — không chỉ một file CLAUDE.md, mà là **12 agents chuyên biệt, 31 skills**, và một workflow phase-locked buộc agent phải **hiểu trước khi build**.
 
 <br>
 
@@ -269,31 +275,31 @@ Bo harness nay cai dat mot he thong development hoan chinh vao project cua ban �
 <td align="center" width="50%" valign="top">
 <h1>📋</h1>
 <strong>Plans theo spec</strong><br><br>
-<sub>PMs va devs cung review mot plan artifact truoc khi bat ky dong code nao duoc viet</sub>
+<sub>PMs và devs cùng review một plan artifact trước khi bất kỳ dòng code nào được viết</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>🔄</h1>
-<strong>Context tu cai thien</strong><br><br>
-<sub>Tu dong cap nhat moi khi ship feature — docs khong bao gio bi stale</sub>
+<strong>Context tự cải thiện</strong><br><br>
+<sub>Tự động cập nhật mỗi khi ship feature — docs không bao giờ bị stale</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%" valign="top">
 <h1>⚡</h1>
 <strong>Autonomous execution</strong><br><br>
-<sub>Song sot qua context compaction — chay hang gio, khong phai vai phut</sub>
+<sub>Sống sót qua context compaction — chạy hàng giờ, không phải vài phút</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>🧬</h1>
 <strong>Architecture research</strong><br><br>
-<sub>Nghien cuu cac codebase thuc truoc khi dua ra quyet dinh design</sub>
+<sub>Nghiên cứu các codebase thực trước khi đưa ra quyết định design</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%" valign="top">
 <h1>🧭</h1>
 <strong>Smart context routing</strong><br><br>
-<sub>Chi load nhung gi lien quan — khong phai toan bo knowledge base moi lan</sub>
+<sub>Chỉ load những gì liên quan — không phải toàn bộ knowledge base mỗi lần</sub>
 </td>
 </tr>
 </table>
@@ -303,18 +309,18 @@ Bo harness nay cai dat mot he thong development hoan chinh vao project cua ban �
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'fontSize': '16px', 'lineColor': '#8888AA'}} }%%
 flowchart TD
-    R["🔍 RESEARCH\nDoc codebase, thu thap du lieu"]
-    I["💡 INNOVATE\nKham pha 2-3 approaches"]
-    P["📋 PLAN\nViet spec chi tiet"]
+    R["🔍 RESEARCH\nĐọc codebase, thu thập dữ liệu"]
+    I["💡 INNOVATE\nKhám phá 2-3 approaches"]
+    P["📋 PLAN\nViết spec chi tiết"]
     E["⚡ EXECUTE\nImplement theo plan"]
     T["✅ tester → reviewer → git-manager"]
-    U["🧠 UPDATE PROCESS\nLuu tru kien thuc"]
+    U["🧠 UPDATE PROCESS\nLưu trữ kiến thức"]
 
-    R -->|"ban noi 'go'"| I
-    I -->|"ban noi 'go'"| P
+    R -->|"bạn nói 'go'"| I
+    I -->|"bạn nói 'go'"| P
     P -->|"ENTER EXECUTE MODE"| E
     E --> T
-    E -->|"khuyen nghi"| U
+    E -->|"khuyến nghị"| U
 
     style R fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     style I fill:#E65100,stroke:#BF360C,color:#FFFFFF
@@ -324,107 +330,107 @@ flowchart TD
     style U fill:#00695C,stroke:#004D40,color:#FFFFFF
 ```
 
-Moi transition deu can su **phe duyet ro rang** cua ban. Khong co gi tu dong chuyen phase. Ban luon nam quyen kiem soat.
+Mỗi transition đều cần sự **phê duyệt rõ ràng** của bạn. Không có gì tự động chuyển phase. Bạn luôn nắm quyền kiểm soát.
 
 ---
 
-## Cuoc cach mang Vibe Coding
+## Cuộc cách mạng Vibe Coding
 
 <div align="center">
-<h3><em>"Ngon ngu lap trinh hot nhat bay gio la tieng Anh."</em></h3>
+<h3><em>"Ngôn ngữ lập trình hot nhất bây giờ là tiếng Anh."</em></h3>
 <strong>— Andrej Karpathy</strong>
 </div>
 
 <br>
 
-**Vibe coding thay doi duoc ai co the xay dung phan mem. Spec-driven development thay doi duoc ho co the ship cai gi.**
+**Vibe coding thay đổi được ai có thể xây dựng phần mềm. Spec-driven development thay đổi được họ có thể ship cái gì.**
 
 <table>
 <tr>
 <td align="center" width="50%">
 <h3>63%</h3>
-<sub>nguoi dung vibe coding <strong>KHONG PHAI</strong> developer</sub>
+<sub>người dùng vibe coding <strong>KHÔNG PHẢI</strong> developer</sub>
 </td>
 <td align="center" width="50%">
 <h3>16.2M</h3>
-<sub>citizen developers toan cau<br>(tang truong 38% YoY)</sub>
+<sub>citizen developers toàn cầu<br>(tăng trưởng 38% YoY)</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%">
 <h3>$4.7B</h3>
-<sub>thi truong vibe coding<br>tang truong 38% hang nam</sub>
+<sub>thị trường vibe coding<br>tăng trưởng 38% hàng năm</sub>
 </td>
 <td align="center" width="50%">
 <h3>25%</h3>
-<sub>startups YC W25 co 95%+ codebase duoc tao boi AI</sub>
+<sub>startups YC W25 có 95%+ codebase được tạo bởi AI</sub>
 </td>
 </tr>
 </table>
 
-Hau het cac tool giup ban bat dau mot project. Bo harness nay giup ban **hoan thanh no** — voi plans ma team co the review, context khong bao gio bi stale, va he thong an toan bat loi truoc khi ship.
+Hầu hết các tool giúp bạn bắt đầu một project. Bộ harness này giúp bạn **hoàn thành nó** — với plans mà team có thể review, context không bao giờ bị stale, và hệ thống an toàn bắt lỗi trước khi ship.
 
 ---
 
-## Danh cho ai?
+## Dành cho ai?
 
 <div align="center">
-<h3><em>"Van de khong phai ai da go. Ma la cai gi da duoc ship."</em></h3>
+<h3><em>"Vấn đề không phải ai đã gõ. Mà là cái gì đã được ship."</em></h3>
 <strong>— Garry Tan, YC</strong>
 </div>
 
 <br>
 
-Du ban moi kham pha vibe coding hay la staff engineer dang ship production systems — bo harness nay thich nghi voi workflow cua ban.
+Dù bạn mới khám phá vibe coding hay là staff engineer đang ship production systems — bộ harness này thích nghi với workflow của bạn.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 <h1>🧑‍💼</h1>
 <strong>CEO / Founder</strong><br><br>
-<em>"Build cho toi mot SaaS voi auth, billing, va landing page"</em><br><br>
-Agent research stack cua ban, viet architecture plan de ban review, implement voi tests, va luu moi quyet dinh de co-founder ky thuat cua ban audit sau.
+<em>"Build cho tôi một SaaS với auth, billing, và landing page"</em><br><br>
+Agent research stack của bạn, viết architecture plan để bạn review, implement với tests, và lưu mọi quyết định để co-founder kỹ thuật của bạn audit sau.
 </td>
 <td width="50%" valign="top">
 <h1>📊</h1>
 <strong>Product Manager</strong><br><br>
-<em>"Tao dashboard hien thi MRR, churn, va growth metrics"</em><br><br>
-No tao spec kieu PRD, xin approval truoc khi viet code, implement theo spec, va archive plan thanh lich su project tim kiem duoc.
+<em>"Tạo dashboard hiển thị MRR, churn, và growth metrics"</em><br><br>
+Nó tạo spec kiểu PRD, xin approval trước khi viết code, implement theo spec, và archive plan thành lịch sử project tìm kiếm được.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🎨</h1>
 <strong>Designer</strong><br><br>
-<em>"Match screenshot Figma nay pixel-perfect"</em><br><br>
-Agent hieu design phan tich mockup cua ban, implement tung component voi design tokens cua ban, va chay visual comparison checks.
+<em>"Match screenshot Figma này pixel-perfect"</em><br><br>
+Agent hiểu design phân tích mockup của bạn, implement từng component với design tokens của bạn, và chạy visual comparison checks.
 </td>
 <td width="50%" valign="top">
 <h1>⚙️</h1>
 <strong>Engineer</strong><br><br>
-<em>"Refactor module auth de ho tro RBAC voi zero downtime"</em><br><br>
-No research code auth hien tai va cach cac codebase khac giai quyet RBAC, viet migration plan voi blast radius analysis, implement an toan voi rollback notes.
+<em>"Refactor module auth để hỗ trợ RBAC với zero downtime"</em><br><br>
+Nó research code auth hiện tại và cách các codebase khác giải quyết RBAC, viết migration plan với blast radius analysis, implement an toàn với rollback notes.
 </td>
 </tr>
 </table>
 
 ---
 
-## Tong quan nhanh
+## Tổng quan nhanh
 
 <table>
 <tr>
 <td align="center" width="50%" valign="top">
 <h1>🤖</h1>
 <h3>12</h3>
-<strong>Agents Chuyen Biet</strong><br>
-<sub>Chuyen gia tung linh vuc, so huu tung phase phat trien</sub>
+<strong>Agents Chuyên Biệt</strong><br>
+<sub>Chuyên gia từng lĩnh vực, sở hữu từng phase phát triển</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>⚡</h1>
 <h3>32</h3>
-<strong>Skills Tu Dong Discover</strong><br>
-<sub>Kha nang tai su dung, duoc surface bang keyword matching</sub>
+<strong>Skills Tự Động Discover</strong><br>
+<sub>Khả năng tái sử dụng, được surface bằng keyword matching</sub>
 </td>
 </tr>
 <tr>
@@ -432,26 +438,26 @@ No research code auth hien tai va cach cac codebase khac giai quyet RBAC, viet m
 <h1>🪝</h1>
 <h3>7</h3>
 <strong>Lifecycle Hooks</strong><br>
-<sub>Guardrails truoc/sau execution va context injection</sub>
+<sub>Guardrails trước/sau execution và context injection</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>📜</h1>
 <h3>6</h3>
 <strong>Development Protocols</strong><br>
-<sub>Workflow rules chung cho moi tool</sub>
+<sub>Workflow rules chung cho mọi tool</sub>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%" valign="top">
 <h1>🛡️</h1>
 <h3>5</h3>
-<strong>He Thong An Toan</strong><br>
+<strong>Hệ Thống An Toàn</strong><br>
 <sub>Phase-locking, blast radius, privacy, leak detection</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>🔧</h1>
 <h3>7</h3>
-<strong>Tools Duoc Ho Tro</strong><br>
+<strong>Tools Được Hỗ Trợ</strong><br>
 <sub>Claude Code, Codex, Cursor, Windsurf, Antigravity, OpenCode, Copilot</sub>
 </td>
 </tr>
@@ -459,73 +465,73 @@ No research code auth hien tai va cach cac codebase khac giai quyet RBAC, viet m
 <td align="center" width="50%" valign="top">
 <h1>🌍</h1>
 <h3>6</h3>
-<strong>Ngon Ngu</strong><br>
+<strong>Ngôn Ngữ</strong><br>
 <sub>EN · 中文 · 日本語 · 한국어 · Tiếng Việt · Portugues</sub>
 </td>
 <td align="center" width="50%" valign="top">
 <h1>⚡</h1>
 <h3>30s</h3>
-<strong>Thoi Gian Cai Dat</strong><br>
-<sub>Mot lenh curl + auto-setup lo phan con lai</sub>
+<strong>Thời Gian Cài Đặt</strong><br>
+<sub>Một lệnh curl + auto-setup lo phần còn lại</sub>
 </td>
 </tr>
 </table>
 
 ---
 
-## 💎 Tai sao cac team dung cai nay
+## 💎 Tại sao các team dùng cái này
 
-> Hau het cac harness chi cho ban mot file CLAUDE.md va huong dan. Cai nay cho ban mot **he thong development autonomous** tich luy intelligence theo thoi gian.
+> Hầu hết các harness chỉ cho bạn một file CLAUDE.md và hướng dẫn. Cái này cho bạn một **hệ thống development autonomous** tích lũy intelligence theo thời gian.
 
 <br>
 
-### 📋 Spec-Driven Development — Khong phai Vibes-Driven
+### 📋 Spec-Driven Development — Không phải Vibes-Driven
 
-Moi feature deu co mot **plan voi phan tich blast radius** truoc khi bat ky dong code nao duoc viet.
+Mỗi feature đều có một **plan với phân tích blast radius** trước khi bất kỳ dòng code nào được viết.
 
-> 💡 Tu dong tao PRDs, quan ly backlogs, to chuc feature groups. Phu hop cho ca developers va product managers — agent plan nhu mot senior engineer, khong phai intern.
+> 💡 Tự động tạo PRDs, quản lý backlogs, tổ chức feature groups. Phù hợp cho cả developers và product managers — agent plan như một senior engineer, không phải intern.
 
-**Moi plan bao gom:**
+**Mỗi plan bao gồm:**
 
-| Muc | Muc dich |
+| Mục | Mục đích |
 |---|---|
-| 📍 **Touchpoints** | Moi file se duoc tao hoac sua, liet ke truoc |
-| 📜 **Public contracts** | Nhung API surfaces hoac interfaces nao thay doi |
-| 💥 **Blast radius** | Cai gi co the hong, tests nao can chay, can theo doi gi |
-| ✅ **Verification evidence** | Cach chung minh implementation la dung |
-| 🔄 **Resume handoff** | Du context de bat ky agent nao pick up giua chung plan |
+| 📍 **Touchpoints** | Mọi file sẽ được tạo hoặc sửa, liệt kê trước |
+| 📜 **Public contracts** | Những API surfaces hoặc interfaces nào thay đổi |
+| 💥 **Blast radius** | Cái gì có thể hỏng, tests nào cần chạy, cần theo dõi gì |
+| ✅ **Verification evidence** | Cách chứng minh implementation là đúng |
+| 🔄 **Resume handoff** | Đủ context để bất kỳ agent nào pick up giữa chừng plan |
 
 <br>
 
-### 🔄 Autonomous Multi-Phase Execution — Hang gio Hands-Free
+### 🔄 Autonomous Multi-Phase Execution — Hàng giờ Hands-Free
 
-Voi nhung task lon, agent chay mot **vong lap phan phase**:
+Với những task lớn, agent chạy một **vòng lặp phân phase**:
 
 ```
 🔍 research → ⚡ execute → ✅ validate → 📄 report → 🔄 repeat
 ```
 
-> 💡 No tu heal khi bi stuck, tu reflect de cai thien approach, va viet progress reports ben vung xuong disk. **Context compaction khong the kill no** — toan bo state nam trong files, khong phai memory.
+> 💡 Nó tự heal khi bị stuck, tự reflect để cải thiện approach, và viết progress reports bền vững xuống disk. **Context compaction không thể kill nó** — toàn bộ state nằm trong files, không phải memory.
 
-Di pha ca phe roi quay lai, moi thu da xong.
-
-<br>
-
-### 🧬 Auto-Architecture Research — Hoc tu bat ky Codebase nao
-
-Agent khong chi doc code cua ban — no **nghien cuu cac repositories khac** de hoc cach ho giai quyet van de tuong tu (`vc-xia`).
-
-> 💡 No research, so sanh cac approaches, va adapt nhung patterns tot nhat vao codebase cua ban. Cac quyet dinh architecture dua tren real-world implementations, khong phai best practices bia ra.
+Đi pha cà phê rồi quay lại, mọi thứ đã xong.
 
 <br>
 
-### 🧭 Persistent Smart Context Routing — Luon dung Context
+### 🧬 Auto-Architecture Research — Học từ bất kỳ Codebase nào
 
-Context khong phai la mot file khong lo. No duoc to chuc thanh **cac knowledge domains tu dong route**:
+Agent không chỉ đọc code của bạn — nó **nghiên cứu các repositories khác** để học cách họ giải quyết vấn đề tương tự (`vc-xia`).
+
+> 💡 Nó research, so sánh các approaches, và adapt những patterns tốt nhất vào codebase của bạn. Các quyết định architecture dựa trên real-world implementations, không phải best practices bịa ra.
+
+<br>
+
+### 🧭 Persistent Smart Context Routing — Luôn đúng Context
+
+Context không phải là một file khổng lồ. Nó được tổ chức thành **các knowledge domains tự động route**:
 
 ```
 process/context/
-├── all-context.md              # 🧭 Root router — doc task, load cai lien quan
+├── all-context.md              # 🧭 Root router — đọc task, load cái liên quan
 ├── tests/
 │   └── all-tests.md            # 🧪 Test runners, commands, debugging
 ├── container/
@@ -533,43 +539,43 @@ process/context/
 ├── uxui/
 │   └── all-uxui.md             # 🎨 Components, design tokens, patterns
 └── {your-domain}/
-    └── all-{domain}.md         # 📚 Bat ky domain nao co 3+ durable docs
+    └── all-{domain}.md         # 📚 Bất kỳ domain nào có 3+ durable docs
 ```
 
-> 💡 Khi agent lam billing, no load billing context — khong phai toan bo docs codebase. Context **tu dong cap nhat moi khi ban hoan thanh feature**, nen no khong bao gio stale.
+> 💡 Khi agent làm billing, nó load billing context — không phải toàn bộ docs codebase. Context **tự động cập nhật mỗi khi bạn hoàn thành feature**, nên nó không bao giờ stale.
 
 <br>
 
-### 🧠 Knowledge Base Tu Cai Thien — Cang Ship Cang Thong Minh
+### 🧠 Knowledge Base Tự Cải Thiện — Càng Ship Càng Thông Minh
 
-Moi feature hoan thanh deu feed learnings nguoc lai vao context system.
+Mỗi feature hoàn thành đều feed learnings ngược lại vào context system.
 
-> 💡 Research findings, architectural decisions, debugging insights, va coding patterns duoc **capture va index tu dong**. Feature thu 100 duoc huong loi tu moi thu da hoc o 99 feature truoc. Knowledge tich luy — no khong reset.
+> 💡 Research findings, architectural decisions, debugging insights, và coding patterns được **capture và index tự động**. Feature thứ 100 được hưởng lợi từ mọi thứ đã học ở 99 feature trước. Knowledge tích lũy — nó không reset.
 
 ---
 
-## So sanh
+## So sánh
 
-| Tinh nang | vibecode-pro-max-kit | Superpowers | GSD | gstack |
+| Tính năng | vibecode-pro-max-kit | Superpowers | GSD | gstack |
 |---------|---------------------|-------------|-----|--------|
-| Spec-driven lifecycle | Full RIPER-5 (research → plan → execute → verify) | Mandatory workflows | Context-rot fix | Mot phan |
-| Phase-locked safety | Tool restrictions theo mode (read-only research, no-write innovate) | Skill-based constraints | Phase separation | Khong co |
-| Ho tro nhieu tool | 7 tools qua AGENTS.md + native | Claude Code plugin | 14 runtimes | 1 tool |
-| Auto-improving context | Domain-routed context groups, cap nhat sau moi feature | Plugin memory | Disk-persisted state | Thu cong |
-| Team collaboration | Shared specs, plans, va review artifacts | Solo | Solo | Solo |
-| He thong skills | 32 tu dong discover, keyword-matched o moi prompt | 86 composable skills | Meta-prompting | 23 role tools |
-| Multi-phase programs | Umbrella plans + vong lap phase-by-phase voi regression checks | Single task | Single task | Single task |
-| Quality pipeline | Chuoi 6 buoc (code-review → test → simplify → security → audit → commit) | Per-skill quality | Khong tu dong | Khong tu dong |
-| Cai dat | 30 giay `curl` install + auto-setup | Plugin marketplace | npx one-liner | git clone |
-| Context routing | Domain-based routing table voi grouped context packs | Flat skill context | Flat context | Single file |
+| Spec-driven lifecycle | Full RIPER-5 (research → plan → execute → verify) | Mandatory workflows | Context-rot fix | Một phần |
+| Phase-locked safety | Tool restrictions theo mode (read-only research, no-write innovate) | Skill-based constraints | Phase separation | Không có |
+| Hỗ trợ nhiều tool | 7 tools qua AGENTS.md + native | Claude Code plugin | 14 runtimes | 1 tool |
+| Auto-improving context | Domain-routed context groups, cập nhật sau mỗi feature | Plugin memory | Disk-persisted state | Thủ công |
+| Team collaboration | Shared specs, plans, và review artifacts | Solo | Solo | Solo |
+| Hệ thống skills | 32 tự động discover, keyword-matched ở mỗi prompt | 86 composable skills | Meta-prompting | 23 role tools |
+| Multi-phase programs | Umbrella plans + vòng lặp phase-by-phase với regression checks | Single task | Single task | Single task |
+| Quality pipeline | Chuỗi 6 bước (code-review → test → simplify → security → audit → commit) | Per-skill quality | Không tự động | Không tự động |
+| Cài đặt | 30 giây `curl` install + auto-setup | Plugin marketplace | npx one-liner | git clone |
+| Context routing | Domain-based routing table với grouped context packs | Flat skill context | Flat context | Single file |
 
-> **Ve do rong runtime:** GSD ho tro 14 runtimes. Chung toi ho tro 7 mot cach sau — voi full agent harnesses, skill discovery, va lifecycle hooks tren moi platform. Rong vs. sau: ban chon.
+> **Về độ rộng runtime:** GSD hỗ trợ 14 runtimes. Chúng tôi hỗ trợ 7 một cách sâu — với full agent harnesses, skill discovery, và lifecycle hooks trên mọi platform. Rộng vs. sâu: bạn chọn.
 
 ---
 
-## ⚡ Diem khac biet
+## ⚡ Điểm khác biệt
 
-Hau het agent harnesses cho ban mot file CLAUDE.md to va vai huong dan. Day la nhung gi cai nay thuc su lam:
+Hầu hết agent harnesses cho bạn một file CLAUDE.md to và vài hướng dẫn. Đây là những gì cái này thực sự làm:
 
 <br>
 
@@ -578,156 +584,156 @@ Hau het agent harnesses cho ban mot file CLAUDE.md to va vai huong dan. Day la n
 <td width="50%" valign="top">
 <h1>🔒</h1>
 <strong>Phase-Locked Tool Restrictions</strong><br><br>
-Agent cua ban <strong>khong the</strong> viet code trong luc research. RESEARCH chi read-only, INNOVATE khong co Bash, PLAN chi duoc ghi vao <code>process/</code>. <strong>Truc tiep tat luon kha nang do</strong>, khong phai goi y.
+Agent của bạn <strong>không thể</strong> viết code trong lúc research. RESEARCH chỉ read-only, INNOVATE không có Bash, PLAN chỉ được ghi vào <code>process/</code>. <strong>Trực tiếp tắt luôn khả năng đó</strong>, không phải gợi ý.
 </td>
 <td width="50%" valign="top">
 <h1>🎯</h1>
 <strong>Smart Auto-Routing</strong><br><br>
-Detect intent tu ngon ngu tu nhien. "build webhook support" → full pipeline. "login is broken" → debugger. 6 cap uu tien, toi da mot cau hoi lam ro.
+Detect intent từ ngôn ngữ tự nhiên. "build webhook support" → full pipeline. "login is broken" → debugger. 6 cấp ưu tiên, tối đa một câu hỏi làm rõ.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🔍</h1>
 <strong>Automatic Skill Discovery</strong><br><br>
-Truoc khi route bat ky request nao, scan <strong>32 skills</strong> va match keywords. Noi "add webhook support" va <code>vc-security</code> + <code>vc-scenario</code> tu dong surface.
+Trước khi route bất kỳ request nào, scan <strong>32 skills</strong> và match keywords. Nói "add webhook support" và <code>vc-security</code> + <code>vc-scenario</code> tự động surface.
 </td>
 <td width="50%" valign="top">
 <h1>💾</h1>
-<strong>Song sot qua Context Compaction</strong><br><br>
-Plans, reports, context docs, va learnings deu nam tren disk. Hook session-init re-inject approval gates sau compaction. <strong>Khong mat gi ca.</strong>
+<strong>Sống sót qua Context Compaction</strong><br><br>
+Plans, reports, context docs, và learnings đều nằm trên disk. Hook session-init re-inject approval gates sau compaction. <strong>Không mất gì cả.</strong>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🛡️</h1>
 <strong>Self-Policing Violation Detection</strong><br><br>
-Khi agent sap vuot phase boundary, no tu dung: <em>"PHASE JUMPING PREVENTED"</em>. Mot <strong>structural hallucination guard</strong>.
+Khi agent sắp vượt phase boundary, nó tự dừng: <em>"PHASE JUMPING PREVENTED"</em>. Một <strong>structural hallucination guard</strong>.
 </td>
 <td width="50%" valign="top">
 <h1>🔄</h1>
-<strong>Chay tren 7 AI Coding Tools</strong><br><br>
-Hai open standards — <code>AGENTS.md</code> va <code>SKILL.md</code> — co nghia la <strong>zero adapters, zero plugins, zero configuration.</strong> Bat dau o Claude Code, chuyen sang Cursor, tiep tuc o Codex.
+<strong>Chạy trên 7 AI Coding Tools</strong><br><br>
+Hai open standards — <code>AGENTS.md</code> và <code>SKILL.md</code> — có nghĩa là <strong>zero adapters, zero plugins, zero configuration.</strong> Bắt đầu ở Claude Code, chuyển sang Cursor, tiếp tục ở Codex.
 </td>
 </tr>
 </table>
 
 ---
 
-## 🧭 Cach hoat dong
+## 🧭 Cách hoạt động
 
 ```
-Request cua ban
+Request của bạn
   → Step 0: Skill Discovery (match keywords → surface relevant skills)
   → Intent Detection (feature / bug / question / refactor / UI)
-  → Route den agent dung
-  → Phase-locked execution voi explicit transitions
+  → Route đến agent đúng
+  → Phase-locked execution với explicit transitions
 ```
 
-Orchestrator **khong bao gio tu lam viec** — no route, monitor, va quan ly transitions.
+Orchestrator **không bao giờ tự làm việc** — nó route, monitor, và quản lý transitions.
 
 <br>
 
 ### 📊 Workflow
 
-| Phase | Chuyen gi xay ra | Ban noi |
+| Phase | Chuyện gì xảy ra | Bạn nói |
 |-------|-------------|---------|
-| 🔍 **RESEARCH** | Fact gathering read-only — codebase + web | *(tu dong voi feature requests)* |
-| 💡 **INNOVATE** | Explore 2-3 approaches voi trade-offs | `go` |
-| 📋 **PLAN** | Viet spec chi tiet de ban review | `go` |
-| ⚡ **EXECUTE** | Implement dung nhung gi da plan | `ENTER EXECUTE MODE` |
-| 🧠 **UPDATE PROCESS** | Capture learnings, cap nhat context, archive plan | *(khuyen nghi sau non-trivial work)* |
+| 🔍 **RESEARCH** | Fact gathering read-only — codebase + web | *(tự động với feature requests)* |
+| 💡 **INNOVATE** | Explore 2-3 approaches với trade-offs | `go` |
+| 📋 **PLAN** | Viết spec chi tiết để bạn review | `go` |
+| ⚡ **EXECUTE** | Implement đúng những gì đã plan | `ENTER EXECUTE MODE` |
+| 🧠 **UPDATE PROCESS** | Capture learnings, cập nhật context, archive plan | *(khuyến nghị sau non-trivial work)* |
 
-> 💡 **Shortcuts:** `ENTER FAST MODE - [task]` nen RESEARCH+INNOVATE+PLAN thanh mot luot — van pause truoc EXECUTE. Trivial fixes (single file, <15 dong, khong schema/auth changes) nhay thang vao execute.
+> 💡 **Shortcuts:** `ENTER FAST MODE - [task]` nén RESEARCH+INNOVATE+PLAN thành một lượt — vẫn pause trước EXECUTE. Trivial fixes (single file, <15 dòng, không schema/auth changes) nhảy thẳng vào execute.
 
 <br>
 
-### 💻 Session dien hinh
+### 💻 Session điển hình
 
 ```
 # 🆕 Feature request
 You: "add webhook support to the API"
 → Skill discovery surfaces: vc-scenario, vc-security
-→ research-agent thu thap context (read-only, khong dung code)
+→ research-agent thu thập context (read-only, không đụng code)
 → You say "go" → innovate-agent explore approaches
-→ You say "go" → plan-agent viet spec voi blast radius
+→ You say "go" → plan-agent viết spec với blast radius
 → You review plan, say "ENTER EXECUTE MODE"
 → execute-agent implement → self-review → tester → code-reviewer → git-manager
-→ Closeout packet: thay doi gi, verified gi, next step khuyen nghi
+→ Closeout packet: thay đổi gì, verified gì, next step khuyến nghị
 ```
 
 ```
 # 🐛 Bug fix
 You: "login redirect is broken"
-→ Route den vc-debugger → thu thap evidence → competing hypotheses
-→ Root cause xac dinh voi proof chain
+→ Route đến vc-debugger → thu thập evidence → competing hypotheses
+→ Root cause xác định với proof chain
 → execute-agent implement fix → quality pipeline
 ```
 
 ```
 # ⏩ Fast mode
 You: "ENTER FAST MODE - add rate limiting middleware"
-→ Nen research+innovate+plan trong mot luot
-→ Safety pause bat buoc → you review → "ENTER EXECUTE MODE"
+→ Nén research+innovate+plan trong một lượt
+→ Safety pause bắt buộc → you review → "ENTER EXECUTE MODE"
 ```
 
 ```
 # 🏗️ Large program
 You: "build a full testing platform"
-→ Tao umbrella plan + phase plans trong feature folder
-→ Moi phase: re-research → approve → execute → validate → durable report
-→ Progress song sot qua context compaction — durable reports tren disk
+→ Tạo umbrella plan + phase plans trong feature folder
+→ Mỗi phase: re-research → approve → execute → validate → durable report
+→ Progress sống sót qua context compaction — durable reports trên disk
 ```
 
 ```
 # 🔄 Autonomous optimization
 You: "improve test coverage to 80% using vc-autoresearch"
-→ Agent lap: make change → commit → measure → keep/revert
-→ Stuck detection sau 5 lan discard lien tiep → strategy shift
+→ Agent lặp: make change → commit → measure → keep/revert
+→ Stuck detection sau 5 lần discard liên tiếp → strategy shift
 → Full audit trail trong TSV
 ```
 
 ---
 
-## 🛡️ He thong an toan tich hop
+## 🛡️ Hệ thống an toàn tích hợp
 
-Day khong chi la guidelines — ma la **structural enforcement** duoc build vao moi agent.
+Đây không chỉ là guidelines — mà là **structural enforcement** được build vào mọi agent.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 <h1>⏸️</h1>
-<strong>Check-In giua chung 50%</strong><br><br>
-Den khoang nua chang execution, agent <strong>tam dung</strong> de bao cao tien do, liet ke items da xong va con lai, roi hoi: <em>"Tiep tuc approach hien tai hay pause va quay lai PLAN?"</em>
+<strong>Check-In giữa chừng 50%</strong><br><br>
+Đến khoảng nửa chặng execution, agent <strong>tạm dừng</strong> để báo cáo tiến độ, liệt kê items đã xong và còn lại, rồi hỏi: <em>"Tiếp tục approach hiện tại hay pause và quay lại PLAN?"</em>
 </td>
 <td width="50%" valign="top">
 <h1>🚫</h1>
-<strong>Khong bao gio am tham di lech</strong><br><br>
-Neu execute-agent gap van de can di lech khoi plan, no <strong>dung ngay lap tuc</strong>, giai thich van de, va quay lai PLAN mode. Khong tu y improvise.
+<strong>Không bao giờ âm thầm đi lệch</strong><br><br>
+Nếu execute-agent gặp vấn đề cần đi lệch khỏi plan, nó <strong>dừng ngay lập tức</strong>, giải thích vấn đề, và quay lại PLAN mode. Không tự ý improvise.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🔙</h1>
 <strong>Approach Abandonment Protocol</strong><br><br>
-Khi mot approach fail, agent danh gia reusable components, document lessons truoc khi xoa, tao abandonment summary, va quay lai PLAN.
+Khi một approach fail, agent đánh giá reusable components, document lessons trước khi xóa, tạo abandonment summary, và quay lại PLAN.
 </td>
 <td width="50%" valign="top">
 <h1>🔐</h1>
 <strong>Privacy Guardrails Hook</strong><br><br>
-Agent bi <strong>chan doc</strong> <code>.env</code>, credentials, SSH keys, va <code>.pem</code> files. Phai xin phe duyet ro rang.
+Agent bị <strong>chặn đọc</strong> <code>.env</code>, credentials, SSH keys, và <code>.pem</code> files. Phải xin phê duyệt rõ ràng.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>⚠️</h1>
 <strong>High-Risk Evidence Packs</strong><br><br>
-Voi nhung thay doi cham vao auth, billing, schema migrations, hoac public APIs — system yeu cau evidence pack formal truoc khi goi cong viec la "done."
+Với những thay đổi chạm vào auth, billing, schema migrations, hoặc public APIs — system yêu cầu evidence pack formal trước khi gọi công việc là "done."
 </td>
 <td width="50%" valign="top">
 <h1>📊</h1>
 <strong>Drift Signal Scoring</strong><br><br>
-Sau execution, system cham diem muc do can thiet: <strong>LOW</strong> (nhe nhang), <strong>MEDIUM</strong> (thay doi dang ke), <strong>HIGH</strong> (dung harness/protocol files).
+Sau execution, system chấm điểm mức độ cần thiết: <strong>LOW</strong> (nhẹ nhàng), <strong>MEDIUM</strong> (thay đổi đáng kể), <strong>HIGH</strong> (đụng harness/protocol files).
 </td>
 </tr>
 </table>
@@ -736,7 +742,7 @@ Sau execution, system cham diem muc do can thiet: <strong>LOW</strong> (nhe nhan
 
 ## 🔍 Pre-Implementation Intelligence
 
-Truoc khi bat ky dong code nao duoc viet, system co the bat issues thong qua phan tich chuyen biet:
+Trước khi bất kỳ dòng code nào được viết, system có thể bắt issues thông qua phân tích chuyên biệt:
 
 <br>
 
@@ -745,19 +751,19 @@ Truoc khi bat ky dong code nao duoc viet, system co the bat issues thong qua pha
 <td width="50%" valign="top">
 <h1>🎭</h1>
 <strong>5-Persona Pre-Implementation Debate</strong><br><br>
-<code>vc-predict</code> — Architect, Security, Performance, UX, va Devil's Advocate tranh luan ve plan cua ban. Dua ra verdict <strong>GO / CAUTION / STOP</strong> truoc khi ban viet mot dong code.
+<code>vc-predict</code> — Architect, Security, Performance, UX, và Devil's Advocate tranh luận về plan của bạn. Đưa ra verdict <strong>GO / CAUTION / STOP</strong> trước khi bạn viết một dòng code.
 </td>
 <td width="50%" valign="top">
 <h1>🎲</h1>
 <strong>12-Dimension Edge Case Generator</strong><br><br>
-<code>vc-scenario</code> — Phan ra bat ky feature nao theo 12 dimensions (user types, input extremes, timing, scale, state, env, errors, auth, data, integrations, compliance, business logic). Outputs co the dung lam test specs.
+<code>vc-scenario</code> — Phân rã bất kỳ feature nào theo 12 dimensions (user types, input extremes, timing, scale, state, env, errors, auth, data, integrations, compliance, business logic). Outputs có thể dùng làm test specs.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🔐</h1>
 <strong>STRIDE + OWASP Security Audit</strong><br><br>
-<code>vc-security</code> — Dual-methodology security audit voi dependency auditing, secret detection, va <strong>auto-fix mode</strong> sap xep theo severity va fix Critical truoc voi regression guards.
+<code>vc-security</code> — Dual-methodology security audit với dependency auditing, secret detection, và <strong>auto-fix mode</strong> sắp xếp theo severity và fix Critical trước với regression guards.
 </td>
 </tr>
 </table>
@@ -773,28 +779,28 @@ Truoc khi bat ky dong code nao duoc viet, system co the bat issues thong qua pha
 <td width="50%" valign="top">
 <h1>🔄</h1>
 <strong>Autonomous Metric Optimization</strong><br><br>
-<code>vc-autoresearch</code> — Dat muc tieu, di choi. Vong lap git-backed: thuc hien MOT thay doi atomic → commit → do → giu hoac revert. Stuck detection sau 5 lan discard lien tiep trigger strategy shifts.
+<code>vc-autoresearch</code> — Đặt mục tiêu, đi chơi. Vòng lặp git-backed: thực hiện MỘT thay đổi atomic → commit → đo → giữ hoặc revert. Stuck detection sau 5 lần discard liên tiếp trigger strategy shifts.
 </td>
 <td width="50%" valign="top">
 <h1>👥</h1>
 <strong>Parallel Agent Teams</strong><br><br>
-<code>vc-team</code> — Nhieu agents lam viec <strong>dong thoi</strong> voi git worktree isolation. Research song song, execute song song, review song song, debug doi khang.
+<code>vc-team</code> — Nhiều agents làm việc <strong>đồng thời</strong> với git worktree isolation. Research song song, execute song song, review song song, debug đối kháng.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h1>🔬</h1>
 <strong>Evidence-Before-Hypothesis Debugging</strong><br><br>
-<code>vc-debugger</code> — Thu thap evidence truoc → hinh thanh 2-3 competing hypotheses → test tung cai mot cach co he thong → document elimination path. <strong>Khong bao gio doan — chung minh.</strong>
+<code>vc-debugger</code> — Thu thập evidence trước → hình thành 2-3 competing hypotheses → test từng cái một cách có hệ thống → document elimination path. <strong>Không bao giờ đoán — chứng minh.</strong>
 </td>
 </tr>
 </table>
 
 ---
 
-## ✅ Quality Pipeline — Tich hop vao Execution
+## ✅ Quality Pipeline — Tích hợp vào Execution
 
-Execute-agent khong chi viet code roi goi la xong. No tu dong chain qua mot **quality pipeline**:
+Execute-agent không chỉ viết code rồi gọi là xong. Nó tự động chain qua một **quality pipeline**:
 
 <br>
 
@@ -802,11 +808,11 @@ Execute-agent khong chi viet code roi goi la xong. No tu dong chain qua mot **qu
 %%{init: {'theme': 'base', 'themeVariables': {'fontSize': '16px', 'lineColor': '#8888AA'}} }%%
 flowchart TD
     E["⚡ Execute-Agent\nImplement theo plan"]
-    SR["🔎 Self-Review\nCheck tung dong\nvoi plan"]
-    T["🧪 Tester\nDiff-aware — chi\nchay affected tests"]
+    SR["🔎 Self-Review\nCheck từng dòng\nvới plan"]
+    T["🧪 Tester\nDiff-aware — chỉ\nchạy affected tests"]
     CR["🔍 Code Reviewer\nEdge case scout\n+ adversarial review"]
     CS["✨ Code Simplifier\nClarity refactoring"]
-    GM["📦 Git Manager\nLogical commit splitting\ntu touched_files"]
+    GM["📦 Git Manager\nLogical commit splitting\ntừ touched_files"]
 
     E --> SR
     SR --> T
@@ -824,19 +830,19 @@ flowchart TD
 
 <br>
 
-| Buoc | Lam gi |
+| Bước | Làm gì |
 |---|---|
-| 🔎 **Self-review** | Check moi checklist item voi plan de phat hien deviations, document lai |
-| 🧪 **Tester** | Map changed files sang test files, auto-escalate len full suite khi >70% duoc mapped |
-| 🔍 **Code reviewer** | Dispatch edge case scout TRUOC review, check N+1 queries, auth paths, data leaks |
-| ✨ **Simplifier** | Clarity refactoring sau khi review pass — khong thay doi behavior |
-| 📦 **Git manager** | Nhan danh sach `touched_files`, split thanh logical conventional commits, tu choi unknown files |
+| 🔎 **Self-review** | Check mọi checklist item với plan để phát hiện deviations, document lại |
+| 🧪 **Tester** | Map changed files sang test files, auto-escalate lên full suite khi >70% được mapped |
+| 🔍 **Code reviewer** | Dispatch edge case scout TRƯỚC review, check N+1 queries, auth paths, data leaks |
+| ✨ **Simplifier** | Clarity refactoring sau khi review pass — không thay đổi behavior |
+| 📦 **Git manager** | Nhận danh sách `touched_files`, split thành logical conventional commits, từ chối unknown files |
 
 ---
 
-## 📋 Plan Lifecycle — Spec-Driven, Khong phai Vibes-Driven
+## 📋 Plan Lifecycle — Spec-Driven, Không phải Vibes-Driven
 
-Moi feature non-trivial deu theo mot **plan lifecycle** — mot spec duoc viet ra, review, execute theo, va archive thanh project history.
+Mỗi feature non-trivial đều theo một **plan lifecycle** — một spec được viết ra, review, execute theo, và archive thành project history.
 
 <br>
 
@@ -847,18 +853,18 @@ flowchart TD
     B["📝 Plan Created\ntrong active/"]
     C{"👀 User Review\nPlan"}
     D["⚡ Execute Theo Plan"]
-    E["📦 Plan Archived\nvao completed/"]
-    F["🧠 Learnings Ghi\nvao all-context.md"]
-    G["🔄 Feature Tiep Theo\nBat Dau Thong Minh Hon"]
+    E["📦 Plan Archived\nvào completed/"]
+    F["🧠 Learnings Ghi\nvào all-context.md"]
+    G["🔄 Feature Tiếp Theo\nBắt Đầu Thông Minh Hơn"]
 
     A --> B
     B --> C
     C -->|"✅ Approved"| D
-    C -->|"✏️ Can Sua"| B
+    C -->|"✏️ Cần Sửa"| B
     D --> E
     E --> F
     F --> G
-    G -.->|"context tich luy"| A
+    G -.->|"context tích lũy"| A
 
     style A fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     style B fill:#E65100,stroke:#BF360C,color:#FFFFFF
@@ -871,19 +877,19 @@ flowchart TD
 
 <br>
 
-> 💡 Sau thang sau, khi ai do hoi *"tai sao minh build auth kieu nay?"*, cau tra loi nam trong `completed/`. Khong bi troi trong Slack thread.
+> 💡 Sáu tháng sau, khi ai đó hỏi *"tại sao mình build auth kiểu này?"*, câu trả lời nằm trong `completed/`. Không bị trôi trong Slack thread.
 
 <br>
 
-**Plans nam o dau tren disk:**
+**Plans nằm ở đâu trên disk:**
 
 ```
 process/
 ├── general-plans/
-│   ├── active/                  # 📋 Plans dang duoc lam
+│   ├── active/                  # 📋 Plans đang được làm
 │   │   └── webhooks_PLAN_28-05-26.md
-│   ├── completed/               # ✅ Plans da archive (lich su tim kiem duoc)
-│   ├── backlog/                 # 📌 Cong viec tri hoan
+│   ├── completed/               # ✅ Plans đã archive (lịch sử tìm kiếm được)
+│   ├── backlog/                 # 📌 Công việc trì hoãn
 │   ├── reports/                 # 📄 Reports cross-cutting
 │   └── references/              # 📚 Research outputs
 └── features/
@@ -897,16 +903,16 @@ process/
 
 ---
 
-## 🏗️ Phase Programs — Du an lon khong bi vo
+## 🏗️ Phase Programs — Dự án lớn không bị vỡ
 
-Feature binh thuong dung mot plan. **Du an lon multi-phase** dung phase program — mot umbrella plan cung voi cac phase plans rieng, moi cai co validation gate rieng.
+Feature bình thường dùng một plan. **Dự án lớn multi-phase** dùng phase program — một umbrella plan cùng với các phase plans riêng, mỗi cái có validation gate riêng.
 
 <br>
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'fontSize': '16px', 'lineColor': '#8888AA'}} }%%
 flowchart TD
-    UP["🎯 Umbrella Plan\nMuc tieu tong the"]
+    UP["🎯 Umbrella Plan\nMục tiêu tổng thể"]
     P1["📋 Phase 1 Plan"]
     P2["📋 Phase 2 Plan"]
     P3["📋 Phase 3 Plan"]
@@ -952,22 +958,22 @@ flowchart TD
 
 <br>
 
-**Tinh nang chinh:**
+**Tính năng chính:**
 
-| | Tinh nang | Tai sao quan trong |
+| | Tính năng | Tại sao quan trọng |
 |---|---|---|
-| 🔄 | **Re-research moi phase** | Check code drift, doc reports moi nhat, cap nhat assumptions |
-| ✅ | **Validation gates** | Phase chua `VERIFIED` cho den khi evidence chung minh. Status trung thuc: `PLANNED` → `CODE DONE` → `TESTING` → `VERIFIED` hoac `BLOCKED` |
-| 📄 | **Durable reports** | Moi phase viet results xuong disk. Progress song sot qua context compaction |
-| 🧠 | **Learnings feed forward** | Phat hien Phase 1 cap nhat plan Phase 2 truoc khi execute |
-| 🏗️ | **Foundation vs expansion** | Tach ro "chung minh architecture" khoi "implement moi thu" |
-| 🚧 | **Honest blocker handling** | Phases bi blocked giu nguyen `BLOCKED` voi evidence. Khong ep green status |
+| 🔄 | **Re-research mỗi phase** | Check code drift, đọc reports mới nhất, cập nhật assumptions |
+| ✅ | **Validation gates** | Phase chưa `VERIFIED` cho đến khi evidence chứng minh. Status trung thực: `PLANNED` → `CODE DONE` → `TESTING` → `VERIFIED` hoặc `BLOCKED` |
+| 📄 | **Durable reports** | Mỗi phase viết results xuống disk. Progress sống sót qua context compaction |
+| 🧠 | **Learnings feed forward** | Phát hiện Phase 1 cập nhật plan Phase 2 trước khi execute |
+| 🏗️ | **Foundation vs expansion** | Tách rõ "chứng minh architecture" khỏi "implement mọi thứ" |
+| 🚧 | **Honest blocker handling** | Phases bị blocked giữ nguyên `BLOCKED` với evidence. Không ép green status |
 
 ---
 
-## 🧠 Context Groups — Knowledge co to chuc, khong phai mot file khong lo
+## 🧠 Context Groups — Knowledge có tổ chức, không phải một file khổng lồ
 
-Project knowledge duoc to chuc thanh **context groups** — cac knowledge domains ben vung, moi cai co mot `all-{group}.md` router cho agents biet doc gi va khi nao.
+Project knowledge được tổ chức thành **context groups** — các knowledge domains bền vững, mỗi cái có một `all-{group}.md` router cho agents biết đọc gì và khi nào.
 
 <br>
 
@@ -987,89 +993,89 @@ process/context/
 ├── workflows/
 │   └── all-workflows.md        # 🔄 Workflow runtime, deployment
 └── {your-domain}/
-    └── all-{domain}.md         # 📚 Bat ky knowledge domain nao co 3+ durable docs
+    └── all-{domain}.md         # 📚 Bất kỳ knowledge domain nào có 3+ durable docs
 ```
 
 <br>
 
-| | Cach hoat dong |
+| | Cách hoạt động |
 |---|---|
-| 🧭 **Router pattern** | Agents chi doc cai lien quan den task, khong phai moi thu |
-| 📏 **Auto-promotion** | Topics co 3+ docs hoac 800+ dong tu co context group rieng |
-| 🔄 **Living docs** | Duoc cap nhat boi `update-process-agent` sau moi feature non-trivial |
-| 🧪 **Auditable** | `vc-audit-context` verify routing va consistency |
+| 🧭 **Router pattern** | Agents chỉ đọc cái liên quan đến task, không phải mọi thứ |
+| 📏 **Auto-promotion** | Topics có 3+ docs hoặc 800+ dòng tự có context group riêng |
+| 🔄 **Living docs** | Được cập nhật bởi `update-process-agent` sau mỗi feature non-trivial |
+| 🧪 **Auditable** | `vc-audit-context` verify routing và consistency |
 
 ---
 
-## 📁 Feature Folders — Project Memory Tu To Chuc
+## 📁 Feature Folders — Project Memory Tự Tổ Chức
 
-Khi mot topic tich luy 5+ artifacts, no co **feature folder** rieng — mot lifecycle container hoan chinh.
+Khi một topic tích lũy 5+ artifacts, nó có **feature folder** riêng — một lifecycle container hoàn chỉnh.
 
 <br>
 
 ```
 process/features/{feature}/
-├── active/       # 📋 Plans dang duoc lam
-├── completed/    # ✅ Plans da archive (lich su quyet dinh tim kiem duoc)
-├── backlog/      # 📌 Cong viec tri hoan (agents check truoc khi tao duplicate plans)
+├── active/       # 📋 Plans đang được làm
+├── completed/    # ✅ Plans đã archive (lịch sử quyết định tìm kiếm được)
+├── backlog/      # 📌 Công việc trì hoãn (agents check trước khi tạo duplicate plans)
 ├── reports/      # 📄 Execution reports, post-mortems, validation results
-└── references/   # 📚 Research outputs phuc vu quyet dinh tuong lai
+└── references/   # 📚 Research outputs phục vụ quyết định tương lai
 ```
 
 <br>
 
-| | Chuyen gi xay ra |
+| | Chuyện gì xảy ra |
 |---|---|
-| 🆕 | Cong viec moi bat dau o `active/` → reports tich luy → plan archive vao `completed/` |
-| 📌 | Cong viec tri hoan vao `backlog/` — agents check truoc khi tao plans trung lap |
-| 📦 | Feature promotion tu dong khi general artifacts dat 5+ |
-| 🔍 | Moi feature co lich su hoan chinh, khep kin — plans, decisions, reports, research |
+| 🆕 | Công việc mới bắt đầu ở `active/` → reports tích lũy → plan archive vào `completed/` |
+| 📌 | Công việc trì hoãn vào `backlog/` — agents check trước khi tạo plans trùng lặp |
+| 📦 | Feature promotion tự động khi general artifacts đạt 5+ |
+| 🔍 | Mỗi feature có lịch sử hoàn chỉnh, khép kín — plans, decisions, reports, research |
 
 ---
 
-## 🤖 Ben trong co gi
+## 🤖 Bên trong có gì
 
 <br>
 
 ### 12 Agents
 
 <details>
-<summary>Click de xem danh sach agents (12 agents)</summary>
+<summary>Click để xem danh sách agents (12 agents)</summary>
 
 <br>
 
-**Core workflow agents** — moi agent cho mot phase RIPER-5:
+**Core workflow agents** — mỗi agent cho một phase RIPER-5:
 
-| Agent | Vai tro |
+| Agent | Vai trò |
 |-------|------|
-| 🔍 `vc-research-agent` | Codebase + web research, read-only. Co contradiction tracking |
-| 💡 `vc-innovate-agent` | Brainstorm 2-3 approaches. Phai tao decision summary truoc PLAN |
-| 📋 `vc-plan-agent` | Viet spec voi anti-rationalization guards. "Toi da biet cach" khong phai la plan |
+| 🔍 `vc-research-agent` | Codebase + web research, read-only. Có contradiction tracking |
+| 💡 `vc-innovate-agent` | Brainstorm 2-3 approaches. Phải tạo decision summary trước PLAN |
+| 📋 `vc-plan-agent` | Viết spec với anti-rationalization guards. "Tôi đã biết cách" không phải là plan |
 | ⚡ `vc-execute-agent` | Implement theo plan. 50% check-in, deviation protocol, self-review |
-| ⏩ `vc-fast-mode-agent` | RESEARCH→INNOVATE→PLAN nen lai voi safety pause bat buoc |
-| 🧠 `vc-update-process-agent` | Checklist bat buoc 7 buoc bao gom quet stale artifacts |
+| ⏩ `vc-fast-mode-agent` | RESEARCH→INNOVATE→PLAN nén lại với safety pause bắt buộc |
+| 🧠 `vc-update-process-agent` | Checklist bắt buộc 7 bước bao gồm quét stale artifacts |
 
 <br>
 
-**Specialist agents** — duoc goi trong EXECUTE hoac standalone:
+**Specialist agents** — được gọi trong EXECUTE hoặc standalone:
 
-| Agent | Vai tro |
+| Agent | Vai trò |
 |-------|------|
 | 🐛 `vc-debugger` | Evidence-before-hypothesis. Competing hypotheses, elimination chains |
-| 🧪 `vc-tester` | Diff-aware. Chi chay affected tests. Auto-escalate khi config thay doi |
-| 🔎 `vc-code-reviewer` | Edge case scout TRUOC review. N+1 detection, auth path validation |
-| ✨ `vc-code-simplifier` | Clarity refactoring khong thay doi behavior |
-| 🎨 `vc-ui-ux-designer` | Design-aware frontend. Co the spawn research subagent giua execution |
-| 📦 `vc-git-manager` | Logical commit splitting tu `touched_files`. Tu choi unknown files |
+| 🧪 `vc-tester` | Diff-aware. Chỉ chạy affected tests. Auto-escalate khi config thay đổi |
+| 🔎 `vc-code-reviewer` | Edge case scout TRƯỚC review. N+1 detection, auth path validation |
+| ✨ `vc-code-simplifier` | Clarity refactoring không thay đổi behavior |
+| 🎨 `vc-ui-ux-designer` | Design-aware frontend. Có thể spawn research subagent giữa execution |
+| 📦 `vc-git-manager` | Logical commit splitting từ `touched_files`. Từ chối unknown files |
 
 </details>
 
 <br>
 
-### 31 Skills (tu dong discover)
+### 31 Skills (tự động discover)
 
 <details>
-<summary>Click de xem danh sach skills (31 skills)</summary>
+<summary>Click để xem danh sách skills (31 skills)</summary>
 
 <br>
 
@@ -1093,19 +1099,19 @@ process/features/{feature}/
 
 ### 🪝 7 Hooks
 
-| Hook | Chuc nang |
+| Hook | Chức năng |
 |------|-------------|
-| 🔐 **Privacy guardrails** | Chan `.env`, credentials, SSH keys. Yeu cau phe duyet ro rang |
-| 🚫 **Scout blocker** | Ngan agent lang thang vao `node_modules/`, `dist/`. Gitignore-syntax `.ckignore` |
-| 🧠 **Session init** | Detect stack, inject env vars, khoi phuc approval gates sau compaction |
-| 💉 **Subagent context** | Inject ~200 token compact context block vao moi subagent |
-| ✨ **Edit quality** | Sau 5+ edits, nhac chay code-simplifier (non-blocking, throttled) |
-| 📛 **Descriptive naming** | Language-aware file naming conventions tren moi Write |
-| 📊 **Usage tracking** | Session metrics va token awareness |
+| 🔐 **Privacy guardrails** | Chặn `.env`, credentials, SSH keys. Yêu cầu phê duyệt rõ ràng |
+| 🚫 **Scout blocker** | Ngăn agent lang thang vào `node_modules/`, `dist/`. Gitignore-syntax `.ckignore` |
+| 🧠 **Session init** | Detect stack, inject env vars, khôi phục approval gates sau compaction |
+| 💉 **Subagent context** | Inject ~200 token compact context block vào mỗi subagent |
+| ✨ **Edit quality** | Sau 5+ edits, nhắc chạy code-simplifier (non-blocking, throttled) |
+| 📛 **Descriptive naming** | Language-aware file naming conventions trên mọi Write |
+| 📊 **Usage tracking** | Session metrics và token awareness |
 
 <br>
 
-**Moi thu nam o dau:**
+**Mọi thứ nằm ở đâu:**
 
 ```
 your-project/
@@ -1128,30 +1134,30 @@ your-project/
 
 ---
 
-## 🔄 Cap nhat
+## 🔄 Cập nhật
 
-Pull nhung cai tien harness moi nhat:
+Pull những cải tiến harness mới nhất:
 
 ```
 Run vc-update
 ```
 
-> 💡 Hien thi dry-run diff, doi xac nhan. Thu muc `process/` va noi dung project-specific cua ban **khong bao gio bi dung**.
+> 💡 Hiển thị dry-run diff, đợi xác nhận. Thư mục `process/` và nội dung project-specific của bạn **không bao giờ bị đụng**.
 
 ---
 
 ## Contributing
 
-Chung toi hoan nghenh contributions! Xem [CONTRIBUTING.md](CONTRIBUTING.md) de biet guidelines.
+Chúng tôi hoan nghênh contributions! Xem [CONTRIBUTING.md](CONTRIBUTING.md) để biết guidelines.
 
 <br>
 
 **Links nhanh:**
 
-- 🐛 [Bao bug](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=1.bug_report.yml)
-- 💡 [Yeu cau feature](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=2.feature_request.yml)
+- 🐛 [Báo bug](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=1.bug_report.yml)
+- 💡 [Yêu cầu feature](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=2.feature_request.yml)
 - ⚡ [Submit skill](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=3.skill_submission.yml)
-- 🌐 [Them ban dich](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=5.translation.yml)
+- 🌐 [Thêm bản dịch](https://github.com/withkynam/vibecode-pro-max-kit/issues/new?template=5.translation.yml)
 
 <br>
 

@@ -89,6 +89,10 @@
 
 ## 🚀 설치 (30초)
 
+> **이 명령은 프로젝트 폴더 안에서 실행하세요.** 터미널을 열고 harness를 설치하려는 프로젝트로 `cd` 한 다음 명령을 실행하세요 — 현재 디렉토리에 설치돼요.
+>
+> 에이전트로 직접 진행하는 게 더 편하다면? 해당 프로젝트 폴더를 작업 디렉토리로 해서 Claude Code나 Codex를 열고, 아래의 전체 설정 프롬프트를 붙여넣으세요.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
@@ -141,6 +145,8 @@ your-project/
 
 <details>
 <summary><strong>🤖 전체 에이전트 설정 프롬프트</strong> (최대한 제어하고 싶으면 이걸 Claude Code에 복붙하세요)</summary>
+
+> **먼저, 프로젝트 폴더를 작업 디렉토리로 해서 Claude Code나 Codex를 여세요** (프로젝트 안에서 실행하거나, 먼저 그곳으로 `cd` 하세요). harness는 현재 디렉토리에 설치되므로, 여기가 반드시 여러분의 프로젝트여야 해요 — 그런 다음 아래 프롬프트를 붙여넣으세요.
 
 ```
 First, install the vibecode-pro-max-kit agent harness by running this command:

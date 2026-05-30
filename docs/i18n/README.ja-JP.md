@@ -89,6 +89,10 @@
 
 ## 🚀 インストール（30秒）
 
+> **このコマンドはプロジェクトフォルダー内で実行してください。** ターミナルを開き、ハーネスをインストールしたいプロジェクトに `cd` してからコマンドを実行してください——カレントディレクトリにインストールされます。
+>
+> エージェントから実行したい場合は、そのプロジェクトフォルダーを作業ディレクトリにしてClaude CodeまたはCodexを開き、下記のフルセットアッププロンプトを貼り付けてください。
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/withkynam/vibecode-pro-max-kit/main/install.sh | bash
 ```
@@ -141,6 +145,8 @@ your-project/
 
 <details>
 <summary><strong>🤖 フルエージェントセットアッププロンプト</strong>（最大限コントロールしたい場合はClaude Codeにコピペしてください）</summary>
+
+> **まず、プロジェクトフォルダーを作業ディレクトリにしてClaude CodeまたはCodexを開いてください**（プロジェクト内から起動するか、先に `cd` してください）。ハーネスはカレントディレクトリにインストールされるため、これは必ずあなたのプロジェクトである必要があります——その上で下記のプロンプトを貼り付けてください。
 
 ```
 First, install the vibecode-pro-max-kit agent harness by running this command:
