@@ -27,7 +27,7 @@
 <p align="center">
   <img src="https://media.tenor.com/q_5em_iLaxoAAAAC/tanjiro-i-water-style.gif" alt="Flow like water" width="480">
   <br><br>
-  <em>"Total Concentration — Spec Breathing, Tenth Form: Constant Flux.<br>A continuous development cycle that grows stronger with each feature shipped.<br>Context compounds. The flow never breaks."</em><br>
+  <em>"Total Concentration — Spec Breathing, Tenth Form: The Vibe Flow never breaks."</em><br>
   <strong>— Tanjiro Kamado</strong>
 </p>
 
