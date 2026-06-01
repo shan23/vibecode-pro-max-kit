@@ -80,7 +80,10 @@
     <img alt="Tech Stack Row 3" src="https://skillicons.dev/icons?i=supabase,firebase,postgres,mongodb,redis,docker,kubernetes,aws,gcp,azure,vercel,cloudflare,tailwind,electron&perline=15" />
   </picture>
   <br>
-  <sub>React · Next.js · Vue · Nuxt · Svelte · Angular · React Native · Electron · Node.js · Express · Bun · Hono · Python · Django · FastAPI · Flask · Ruby · Rails · Go · Rust · Java · Spring Boot · Kotlin · Swift · PHP · Laravel · C# · .NET · Elixir · TypeScript · Prisma · Supabase · Firebase · PostgreSQL · MongoDB · Redis · GraphQL · Docker · Kubernetes · Terraform · AWS · GCP · Azure · Vercel · Cloudflare · Tailwind · shadcn/ui · and any other stack your project uses</sub>
+  <p><em>Not decorative. When you run <code>vc-setup</code>, parallel agents scan your codebase,<br>
+  detect your stack, and build project-specific context groups that every skill reads before it works.<br>
+  Other harnesses hardcode agents to one language — <code>rust-review-agent</code>, <code>python-linter</code> — useless elsewhere.<br>
+  This one adapts to any combination above and compounds knowledge as you ship.</em></p>
 </p>
 
 </div>
